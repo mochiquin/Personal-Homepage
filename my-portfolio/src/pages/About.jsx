@@ -1,217 +1,221 @@
 // pages/About.jsx
+import React from 'react';
 import '../styles/About.css';
 
 const About = () => {
-  // 时间线数据
+  // Timeline data
   const timelineData = [
     {
-      year: '2023',
-      title: '独立开发者',
-      description: '开始作为独立开发者工作，专注于创建独特的数字体验。'
+      year: '2025',
+      title: 'Freelance Developer',
+      description: 'Started working as an independent developer, focusing on creating unique digital experiences with 3D elements.'
     },
     {
-      year: '2022',
-      title: '高级前端开发',
-      description: '在科技公司担任高级前端开发，负责大型电子商务平台重构。'
+      year: '2024',
+      title: 'Post-Graduate',
+      description: 'Completed post-graduate studies in Computing and Innovation, specializing in web development, 3D design, and UI/UX design.'
     },
     {
       year: '2020',
-      title: '开始职业生涯',
-      description: '在数字机构获得第一份工作，参与多个客户项目的开发。'
+      title: 'University',
+      description: 'Studied New Energy at Shanghai University of Electric Power.'
+    },
+  ];
+
+  // Skills data
+  const skillsData = [
+    {
+      category: '3D Design',
+      icon: 'cube',
+      description: 'Creating immersive 3D models, animations, and interactive elements.',
+      skills: ['Blender', 'C4D', 'Octane render', '3D Modeling', 'Animation']
     },
     {
-      year: '2019',
-      title: '大学毕业',
-      description: '获得计算机科学学士学位，专注于人机交互和网页设计。'
+      category: 'Frontend',
+      icon: 'code',
+      description: 'Building responsive, performant, and visually appealing websites.',
+      skills: ['HTML/CSS/JavaScript', 'React', 'Next.js', 'Responsive Design', 'Performance Optimization']
+    },
+    {
+      category: 'UI/UX',
+      icon: 'paint-brush',
+      description: 'Designing intuitive interfaces and seamless user experiences.',
+      skills: ['Figma', 'Adobe XD', 'Prototyping', 'Wireframing', 'User Research']
     }
   ];
 
+  // Design principles
+  const designPrinciples = [
+    {
+      number: '01',
+      title: 'User-Centric Approach',
+      description: 'Placing user needs at the core of all design decisions to create intuitive and accessible interfaces.'
+    },
+    {
+      number: '02',
+      title: '3D Immersion',
+      description: 'Integrating thoughtful 3D elements to enhance engagement and create memorable digital experiences.'
+    },
+    {
+      number: '03',
+      title: 'Cutting-Edge Technology',
+      description: 'Embracing new technologies and exploring innovative solutions while maintaining practicality and performance.'
+    }
+  ];
+  
+  // Smooth scroll function
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="about">
-      {/* 页面标题 */}
-      <section className="about-header">
-        <div className="about-header-content">
-          <h1 className="heading-xl">关于我</h1>
-          <div className="about-header-line"></div>
-        </div>
-      </section>
-
-      {/* 个人简介 */}
-      <section className="about-intro section">
-        <div className="container">
-          <div className="about-intro-content">
-            <div className="about-image">
-              <img src="/images/profile.jpg" alt="个人照片" />
-              <div className="about-image-decoration"></div>
-            </div>
-            
-            <div className="about-bio">
-              <h2>我是 <span className="highlight">你的名字</span></h2>
-              <h3>前端开发师 & UI/UX设计师</h3>
-              
-              <p>
-                我是一位充满激情的前端开发者和设计师，专注于创建独特、引人入胜的数字体验。我结合技术专长和设计美感，打造既美观又功能强大的网站和应用。
-              </p>
-              
-              <p>
-                我热衷于将复杂的设计理念转化为直观的用户界面，始终以用户体验为核心。每个项目都是一次将创意和技术结合的机会，我享受这个过程带来的挑战和成就感。
-              </p>
-              
-              <div className="about-details">
-                <div className="about-detail">
-                  <span className="detail-label">姓名</span>
-                  <span className="detail-value">你的名字</span>
-                </div>
-                
-                <div className="about-detail">
-                  <span className="detail-label">邮箱</span>
-                  <span className="detail-value">email@example.com</span>
-                </div>
-                
-                <div className="about-detail">
-                  <span className="detail-label">电话</span>
-                  <span className="detail-value">+86 123 4567 8900</span>
-                </div>
-                
-                <div className="about-detail">
-                  <span className="detail-label">所在地</span>
-                  <span className="detail-value">中国，城市</span>
-                </div>
-              </div>
-              
-              <div className="about-social">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <i className="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <i className="fab fa-linkedin"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-icon">
-                  <i className="fab fa-behance"></i>
-                </a>
-              </div>
-              
-              <a href="/resume.pdf" download className="btn btn-accent">
-                下载简历
-              </a>
-            </div>
+    <div className="modernist-container">
+      {/* Main grid container */}
+      <div className="about-grid">
+        {/* Name block */}
+        <div className="name-block">
+          <h1 className="name">SILIN LI</h1>
+          <div className="scroll-indicator" onClick={() => scrollToElement('journey')}>
+            <span>SCROLL TO EXPLORE</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4V20M12 20L18 14M12 20L6 14" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
         </div>
-      </section>
 
-      {/* 我的旅程 */}
-      <section className="about-journey section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-lg">我的旅程</h2>
-            <p>追寻梦想的历程</p>
+        {/* Title block */}
+        <div className="title-block">
+          <div className="title-content">
+            <h2 className="profession">3D Designer</h2>
+            <div className="separator"></div>
+            <h2 className="profession">Frontend Developer</h2>
+            <div className="separator"></div>
+            <h2 className="profession">UI/UX Designer</h2>
           </div>
-          
+        </div>
+
+        {/* Profile image */}
+        <div className="profile-image-block">
+          <div className="profile-image-container">
+            <img src="/assets/1.jpg" alt="Silin Li" className="profile-image" />
+          </div>
+          <div className="image-caption">Portfolio — 2025</div>
+        </div>
+
+        {/* Bio block */}
+        <div className="bio-block">
+          <p className="bio-text">
+            I am a passionate creator specializing in 3D design, frontend development, and UI/UX design. I craft unique and engaging digital experiences by combining technical expertise with design aesthetics.
+          </p>
+          <p className="bio-text">
+            I excel at transforming complex design concepts into intuitive user interfaces with immersive 3D elements. With user experience at the core of my approach, each project becomes an opportunity to blend creativity, technology, and three-dimensional thinking.
+          </p>
+        </div>
+
+        {/* Contact block */}
+        <div className="contact-block">
+          <div className="contact-item">
+            <span className="contact-label">Email</span>
+            <span className="contact-value">sili50783@gmail.com</span>
+          </div>
+          <div className="contact-item">
+            <span className="contact-label">Telephone</span>
+            <span className="contact-value">0435566271</span>
+          </div>
+          <div className="contact-item">
+            <span className="contact-label">Location</span>
+            <span className="contact-value">Adelaide, Australia</span>
+          </div>
+          <div className="resume-download">
+            <a href="/resume.pdf" download className="download-button">
+              Download Resume [PDF]
+            </a>
+          </div>
+        </div>
+
+        {/* Social links */}
+        <div className="social-block">
+          <div className="social-title">CONNECT</div>
+          <div className="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              GitHub
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              LinkedIn
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
+              Instagram
+            </a>
+            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
+              Behance
+            </a>
+          </div>
+        </div>
+
+        {/* Journey timeline */}
+        <div className="journey-block" id="journey">
+          <div className="journey-title">MY JOURNEY</div>
           <div className="timeline">
             {timelineData.map((item, index) => (
               <div className="timeline-item" key={index}>
-                <div className="timeline-dot"></div>
-                <div className="timeline-date">{item.year}</div>
+                <div className="timeline-year">{item.year}</div>
                 <div className="timeline-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <h3 className="timeline-title">{item.title}</h3>
+                  <p className="timeline-description">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* 理念和价值观 */}
-      <section className="about-philosophy section">
-        <div className="container">
-          <div className="philosophy-content">
-            <div className="philosophy-text">
-              <h2 className="heading-lg">我的设计理念</h2>
-              <p>
-                我相信设计不仅仅是表面的美感，而是解决问题的强大工具。我的目标是创造既美观又实用的作品，每个元素都有其目的，共同构建出优秀的用户体验。
-              </p>
-              <p>
-                我坚持以下设计原则：
-              </p>
-              <ul className="philosophy-list">
-                <li>
-                  <span className="list-number">01</span>
-                  <div>
-                    <h3>用户为中心</h3>
-                    <p>始终将用户需求置于设计决策的核心，创造直观且易用的界面。</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="list-number">02</span>
-                  <div>
-                    <h3>注重细节</h3>
-                    <p>精心打磨每个细节，因为优秀的用户体验往往在细节中体现。</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="list-number">03</span>
-                  <div>
-                    <h3>前沿技术</h3>
-                    <p>拥抱新技术，探索创新解决方案，但始终保持实用性。</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="philosophy-image">
-              <img src="/images/design-philosophy.jpg" alt="设计理念" />
-            </div>
+        {/* Design philosophy */}
+        <div className="philosophy-block">
+          <div className="philosophy-title">DESIGN PHILOSOPHY</div>
+          <div className="philosophy-text">
+            I believe design is not just about aesthetics, but a powerful tool for solving problems. My goal is to create work that is both beautiful and functional, where every element has a purpose.
+          </div>
+          <div className="principles-list">
+            {designPrinciples.map((principle, index) => (
+              <div className="principle-item" key={index}>
+                <div className="principle-number">{principle.number}</div>
+                <div className="principle-content">
+                  <h3 className="principle-title">{principle.title}</h3>
+                  <p className="principle-description">{principle.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
 
-      {/* 个人爱好 */}
-      <section className="about-interests section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="heading-lg">个人爱好</h2>
-            <p>工作之外的我</p>
-          </div>
-          
-          <div className="interests-grid">
-            <div className="interest-card">
-              <div className="interest-icon">
-                <i className="fas fa-camera"></i>
+        {/* Skills and expertise */}
+        <div className="skills-block">
+          <div className="skills-title">EXPERTISE</div>
+          <div className="skills-grid">
+            {skillsData.map((skill, index) => (
+              <div className="skill-card" key={index}>
+                <div className="skill-header">
+                  <h3 className="skill-category">{skill.category}</h3>
+                </div>
+                <p className="skill-description">{skill.description}</p>
+                <ul className="skill-list">
+                  {skill.skills.map((item, i) => (
+                    <li key={i} className="skill-item">{item}</li>
+                  ))}
+                </ul>
               </div>
-              <h3>摄影</h3>
-              <p>热爱捕捉生活中的瞬间和美景，尤其喜欢街头摄影和风景摄影。</p>
-            </div>
-            
-            <div className="interest-card">
-              <div className="interest-icon">
-                <i className="fas fa-book"></i>
-              </div>
-              <h3>阅读</h3>
-              <p>喜欢阅读设计、科技和科幻小说类书籍，从中获取灵感和创意。</p>
-            </div>
-            
-            <div className="interest-card">
-              <div className="interest-icon">
-                <i className="fas fa-hiking"></i>
-              </div>
-              <h3>户外活动</h3>
-              <p>享受徒步旅行和露营，与自然接触能够刷新思维和激发创造力。</p>
-            </div>
-            
-            <div className="interest-card">
-              <div className="interest-icon">
-                <i className="fas fa-gamepad"></i>
-              </div>
-              <h3>游戏</h3>
-              <p>热衷于独立游戏，欣赏其中独特的艺术风格和创新的交互设计。</p>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Footer */}
+      <footer className="footer-section">
+        <div className="footer-copyright">© 2025 SILIN LI. ALL RIGHTS RESERVED.</div>
+        <div className="footer-note">DESIGNED WITH MODERNIST PRINCIPLES</div>
+      </footer>
     </div>
   );
 };
