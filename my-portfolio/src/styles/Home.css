@@ -1,0 +1,596 @@
+/* styles/Home.css */
+/* 英雄区域 */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 5% center ; /* 或者调整为 "center 40%" 等来控制垂直位置 */
+  /* 不要包含 background-repeat: no-repeat; 如果它导致裁切问题 */
+}
+
+/* 如果你想保留灰度和对比度滤镜效果，你可以这样设置 */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  filter: grayscale(100%) contrast(1.2);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 移除或修改原有的 .hero::before 伪元素中的背景相关属性 */
+.hero::before {
+  /* 移除背景相关属性 */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+  
+  .hero-content {
+    width: 90%;
+    max-width: 1440px;
+    z-index: 1;
+    position: relative;
+  }
+  
+  .hero-text {
+    max-width: 800px;
+    transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  .hero-heading {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-heading span {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+  }
+  
+  /* 自定义每个单词的样式 */
+  .hero-heading span:nth-child(1) {
+    animation-delay: 0.3s;
+    color: #ffffff; /* 鲜艳的红色 */
+    font-family: 'Orbitron', sans-serif; /* 未来感科技字体 */
+    letter-spacing: 2px;
+  }
+  
+  .hero-heading span:nth-child(2) {
+    animation-delay: 0.6s;
+    color: #ffffff; /* 青绿色 */
+    font-family: 'Rajdhani', sans-serif; /* 现代设计字体 */
+    margin-left: 3rem; /* 缩进效果 */
+    font-weight: 600;
+  }
+  
+  .hero-heading span:nth-child(3) {
+    animation-delay: 0.9s;
+    color: #ffffff; /* 金黄色 */
+    font-family: 'Syncopate', sans-serif; /* 更具棱角的科技字体 */
+    margin-left: 6rem; /* 更大的缩进 */
+  }
+  
+  /* 可选: 添加悬停效果 */
+  .hero-heading span:hover {
+    text-shadow: 0 0 15px currentColor;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .hero-subheading {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    animation-delay: 1.2s;
+  }
+  
+  .hero-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    animation-delay: 1.5s;
+  }
+  
+  .hero-circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    z-index: 1;
+    animation: none; /* 移除旋转动画，因为我们现在用鼠标控制 */
+  }
+  
+  /* 添加 SVG 样式 */
+.circle-svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-out; /* 平滑过渡效果 */
+}
+
+/* 添加一个内圆 */
+.hero-circle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: var(--accent-color, #ffffff);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 15px var(--accent-color, #ffffff);
+}
+
+/* 创建光点效果点缀在圆环上 */
+.hero-circle::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: pulseLight 2s infinite alternate;
+}
+
+  
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    animation-delay: 2s;
+  }
+  
+  .scroll-indicator span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .scroll-arrow {
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--text-color);
+    border-radius: 15px;
+    position: relative;
+  }
+  
+  .scroll-arrow::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+  }
+  
+  /* 介绍区域 */
+  .intro {
+    background-color: var(--primary-color);
+  }
+  
+  .intro-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .intro-title {
+    position: relative;
+  }
+  
+  .intro-title h2 {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .line {
+    width: 100px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin-top: 1rem;
+  }
+  
+  .intro-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .text-link {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    position: relative;
+  }
+  
+  .text-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+  }
+  
+  .text-link:hover::after {
+    width: 100%;
+  }
+  
+  .text-link span {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .text-link:hover span {
+    transform: translateX(5px);
+  }
+  
+  /* 项目区域 */
+  .featured-projects {
+    background-color: var(--background-color);
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-header h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .section-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .project-card.featured {
+    grid-column: 1 / -1;
+  }
+  
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .project-image img, .placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .placeholder-img {
+    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .project-meta {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+  }
+  
+  .project-card:hover .project-meta {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .project-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .section-footer {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* 技能区域 */
+  .skills-overview {
+    background-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skills-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .skills-text h2 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .skills-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .skills-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .skill-tag {
+    padding: 0.5rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-tag:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+  }
+  
+  /* 联系区域 */
+  .contact-cta {
+    background-color: var(--background-color);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cta-content h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+  }
+  
+  .cta-decoration {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .decoration-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: 50%;
+    right: -150px;
+    transform: translateY(-50%);
+  }
+  
+  .decoration-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.05);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* 动画 */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, 20px);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, 20px);
+    }
+  }
+  
+  /* 响应式设计 */
+  @media screen and (max-width: 1200px) {
+    .hero-circle {
+      width: 300px;
+      height: 300px;
+      right: -50px;
+    }
+  }
+  @keyframes pulseLight {
+  from {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+/* 为小屏幕设备保留 media query */
+@media screen and (max-width: 900px) {
+  .hero-circle {
+    display: none;
+  }
+}
+
+  @media screen and (max-width: 900px) {
+    .intro-content,
+    .skills-content {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-circle {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .hero-heading {
+      font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .hero-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .hero-cta .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
