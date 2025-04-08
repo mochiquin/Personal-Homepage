@@ -87,7 +87,7 @@ const About = () => {
         <div className="hero-bg" style={{backgroundImage: "url('../assets/hero-bg.jpg')"}}></div>
       </section>
       
-      {/* About Section */}
+      {/* About Section - Kojima Inspired Vertical Text */}
       <section className="about-section">
         {/* About Header with white line */}
         <div className="about-header-container">
@@ -97,40 +97,47 @@ const About = () => {
           </div>
         </div>
         
-        {/* About Content with white background */}
-        <div className="about-white-background">
-          <div className="about-container">
-            <div className="about-content">
-              <div className="about-image-container">
-                <img src="../assets/2.jpg" alt="Silin Li" className="about-image" />
-                <div className="image-decoration"></div>
+        {/* Redesigned About Content with background image and vertical text */}
+        <div className="kojima-about-background">
+          <div className="kojima-about-container">
+            <div className="kojima-about-content">
+              <div className="kojima-vertical-text">
+                <p className="kojima-text-line">I am a passionate creator specializing in 3D design,</p>
+                <p className="kojima-text-line">frontend development, and UI/UX design.</p>
+                <p className="kojima-text-line">I craft unique digital experiences by combining</p>
+                <p className="kojima-text-line">technical expertise with design aesthetics.</p>
+                <p className="kojima-text-line">I excel at transforming complex design concepts</p>
+                <p className="kojima-text-line">into intuitive user interfaces with immersive 3D elements.</p>
+                <p className="kojima-text-line">With user experience at the core of my approach,</p>
+                <p className="kojima-text-line">each project becomes an opportunity to blend creativity,</p>
+                <p className="kojima-text-line">technology, and three-dimensional thinking.</p>
               </div>
               
-              <div className="about-text">
-                <p className="about-paragraph">
-                  I am a passionate creator specializing in 3D design, frontend development, and UI/UX design. I craft unique and engaging digital experiences by combining technical expertise with design aesthetics.
-                </p>
+              <div className="kojima-profile-section">
+                <div className="kojima-profile-image">
+                  <img src="../assets/2.jpg" alt="Silin Li" />
+                </div>
                 
-                <p className="about-paragraph">
-                  I excel at transforming complex design concepts into intuitive user interfaces with immersive 3D elements. With user experience at the core of my approach, each project becomes an opportunity to blend creativity, technology, and three-dimensional thinking.
-                </p>
-                
-                <div className="contact-info">
-                  <div className="contact-item">
-                    <span className="contact-label">Email</span>
-                    <span className="contact-value">sili50783@gmail.com</span>
+                <div className="kojima-contact-info">
+                  <div className="kojima-info-item">
+                    <span className="kojima-info-label">Email</span>
+                    <span className="kojima-info-value">sili50783@gmail.com</span>
                   </div>
                   
-                  <div className="contact-item">
-                    <span className="contact-label">Location</span>
-                    <span className="contact-value">Adelaide, Australia</span>
+                  <div className="kojima-info-item">
+                    <span className="kojima-info-label">Location</span>
+                    <span className="kojima-info-value">Adelaide, Australia</span>
                   </div>
                 </div>
                 
-                <div className="social-links">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
-                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">Behance</a>
+                <div className="kojima-social">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+                </div>
+                
+                <div className="kojima-signature">
+                  <h3>SILIN LI</h3>
                 </div>
               </div>
             </div>

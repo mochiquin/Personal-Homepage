@@ -68,7 +68,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  
   z-index: 1;
 }
 
@@ -146,152 +146,207 @@ body {
   position: relative;
 }
 
-.about-header-container {
+/* Kojima Inspired About Section Styles */
+.kojima-container .about-header-container {
   padding: 80px 0 40px;
   background-color: #000;
 }
 
-.about-header-title {
+.kojima-container .about-header-title {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
   color: #fff;
   margin-bottom: 15px;
+  padding-left: 50px;
 }
 
-.about-header-line {
+.kojima-container .about-header-line {
   width: 60px;
   height: 3px;
   background-color: #fff;
+  padding-left: 0px;
+  margin-left: 50px;
 }
 
-.about-white-background {
-  background-color: #fff;
-  padding: 80px 0;
-  color: #000;
+.kojima-container .kojima-about-background {
   position: relative;
+  min-height: 600px;
+  background-color: #000;
+  overflow: hidden;
+  padding: 60px 0;
+  /* 添加两侧留白的背景纹理 */
+  background-image: linear-gradient(to right, 
+    #000 0%, 
+    #000 15%, 
+    rgba(0,0,0,0.9) 17%, 
+    rgba(0,0,0,0.9) 83%, 
+    #000 85%, 
+    #000 100%
+  );
 }
 
-/* Shadow overlay for top transition */
-.about-white-background::before {
+.kojima-container .kojima-about-background::before {
   content: '';
   position: absolute;
-  top: -5px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%; /* 控制中间背景区域的宽度 */
+  height: 100%;
+  background-image: url('../assets/2.jpg'); /* You'll need to add this image */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+  /* 添加边缘淡出效果 */
+  box-shadow: 0 0 50px 50px rgba(0,0,0,0.5) inset;
 }
 
-.about-container {
-  max-width: 200px;
+.kojima-container .kojima-about-container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-gap: 10px;
-  align-items: center;
-}
-
-.about-image-container {
   position: relative;
+  z-index: 1;
 }
 
-.about-image {
+.kojima-container .kojima-about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Vertical text section */
+.kojima-container .kojima-vertical-text {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.kojima-container .kojima-text-line {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.kojima-container .kojima-text-line:hover {
+  transform: translateX(5px);
+  color: #ccc;
+}
+
+.kojima-container .kojima-text-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Profile section */
+.kojima-container .kojima-profile-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.kojima-container .kojima-profile-image {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.kojima-container .kojima-profile-image img {
   width: 100%;
-  display: block;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  object-fit: cover;
   filter: grayscale(100%);
   transition: filter 0.5s ease;
 }
 
-.about-image:hover {
+.kojima-container .kojima-profile-image img:hover {
   filter: grayscale(0%);
 }
 
-.image-decoration {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  width: 50%;
-  height: 50%;
-  border-left: 2px solid #000;
-  border-top: 2px solid #000;
-  z-index: 1;
+.kojima-container .kojima-contact-info {
+  text-align: right;
+  margin-bottom: 30px;
 }
 
-.about-text {
-  color: #333;
+.kojima-container .kojima-info-item {
+  margin-bottom: 15px;
 }
 
-.about-paragraph {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
-.contact-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
-  margin: 40px 0;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-label {
+.kojima-container .kojima-info-label {
+  display: block;
   font-size: 0.85rem;
-  text-transform: uppercase;
   color: #888;
+  text-transform: uppercase;
   margin-bottom: 5px;
 }
 
-.contact-value {
+.kojima-container .kojima-info-value {
+  display: block;
   font-size: 1rem;
-  color: #000;
+  color: #fff;
   font-weight: 500;
 }
 
-.social-links {
+.kojima-container .kojima-social {
   display: flex;
-  gap: 25px;
-  margin-top: 40px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 30px;
 }
 
-.social-link {
-  color: #000;
+.kojima-container .kojima-social a {
+  color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 1px;
+  margin-bottom: 10px;
   position: relative;
   transition: color 0.3s ease;
 }
 
-.social-link::after {
+.kojima-container .kojima-social a::after {
   content: '';
   position: absolute;
+  bottom: -5px;
+  right: 0;
   width: 0;
   height: 1px;
-  bottom: -5px;
-  left: 0;
-  background-color: #000;
+  background-color: #fff;
   transition: width 0.3s ease;
 }
 
-.social-link:hover {
-  color: #555;
+.kojima-container .kojima-social a:hover {
+  color: #ccc;
 }
 
-.social-link:hover::after {
+.kojima-container .kojima-social a:hover::after {
   width: 100%;
+  left: 0;
+}
+
+.kojima-container .kojima-signature {
+  margin-top: 20px;
+}
+
+.kojima-container .kojima-signature h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
 /* Timeline Section */
@@ -471,6 +526,44 @@ body {
   color: #666;
 }
 
+/* Responsive adjustments for Kojima style */
+@media (max-width: 768px) {
+  .kojima-container .kojima-about-content {
+    flex-direction: column;
+  }
+  
+  .kojima-container .kojima-vertical-text,
+  .kojima-container .kojima-profile-section {
+    width: 100%;
+  }
+  
+  .kojima-container .kojima-profile-section {
+    margin-top: 50px;
+    align-items: flex-start;
+  }
+  
+  .kojima-container .kojima-contact-info {
+    text-align: left;
+  }
+  
+  .kojima-container .kojima-social {
+    align-items: flex-start;
+  }
+  
+  .timeline {
+    padding-left: 0;
+  }
+  
+  .timeline-item {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  
+  .timeline-connector {
+    display: none;
+  }
+}
+
 /* Footer */
 .footer {
   padding: 60px 0;
@@ -498,7 +591,7 @@ body {
   color: #666;
 }
 
-/* Responsive adjustments */
+/* Additional responsive adjustments */
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 10vw;
@@ -506,21 +599,6 @@ body {
   
   .hero-subtitle {
     font-size: 1.2rem;
-  }
-  
-  .about-content {
-    grid-template-columns: 1fr;
-    grid-gap: 40px;
-  }
-  
-  .about-image-container {
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .contact-info {
-    grid-template-columns: 1fr;
-    grid-gap: 20px;
   }
   
   .section-title,
@@ -546,23 +624,6 @@ body {
   .hero-subtitle {
     font-size: 1rem;
     letter-spacing: 3px;
-  }
-  
-  .timeline {
-    padding-left: 0;
-  }
-  
-  .timeline-item {
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-  }
-  
-  .timeline-connector {
-    display: none;
-  }
-  
-  .timeline-year {
-    font-size: 1.5rem;
   }
   
   .footer-content {
