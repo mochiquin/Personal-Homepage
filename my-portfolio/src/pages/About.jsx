@@ -1,5 +1,5 @@
 // pages/About.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/About.css';
 
 const About = () => {
@@ -22,7 +22,7 @@ const About = () => {
     },
   ];
 
-  // Skills data
+  // Skills data for the skills section
   const skillsData = [
     {
       category: '3D Design',
@@ -44,24 +44,22 @@ const About = () => {
     }
   ];
 
-  // Design principles
-  const designPrinciples = [
-    {
-      number: '01',
-      title: 'User-Centric Approach',
-      description: 'Placing user needs at the core of all design decisions to create intuitive and accessible interfaces.'
-    },
-    {
-      number: '02',
-      title: '3D Immersion',
-      description: 'Integrating thoughtful 3D elements to enhance engagement and create memorable digital experiences.'
-    },
-    {
-      number: '03',
-      title: 'Cutting-Edge Technology',
-      description: 'Embracing new technologies and exploring innovative solutions while maintaining practicality and performance.'
-    }
-  ];
+  // State for scroll animation
+  const [scrollPosition, setScrollPosition] = useState(0);
+  
+  // Handle scroll event to track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
   // Smooth scroll function
   const scrollToElement = (id) => {
@@ -72,96 +70,93 @@ const About = () => {
   };
 
   return (
-    <div className="modernist-container">
-      {/* Main grid container */}
-      <div className="about-grid">
-        {/* Name block */}
-        <div className="name-block">
-          <h1 className="name">SILIN LI</h1>
-          <div className="scroll-indicator" onClick={() => scrollToElement('journey')}>
-            <span>SCROLL TO EXPLORE</span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4V20M12 20L18 14M12 20L6 14" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+    <div className="kojima-container">
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <div className="hero-title-container">
+            <h1 className="hero-title">SILIN LI</h1>
+            <div className="hero-subtitle">CREATOR | DEVELOPER | DESIGNER</div>
+          </div>
+          <div className="scroll-prompt">
+            <span>Scroll to explore</span>
+            <div className="scroll-arrow"></div>
           </div>
         </div>
-
-        {/* Title block */}
-        <div className="title-block">
-          <div className="title-content">
-            <h2 className="profession">3D Designer</h2>
-            <div className="separator"></div>
-            <h2 className="profession">Frontend Developer</h2>
-            <div className="separator"></div>
-            <h2 className="profession">UI/UX Designer</h2>
+        <div className="hero-overlay"></div>
+        <div className="hero-bg" style={{backgroundImage: "url('../assets/hero-bg.jpg')"}}></div>
+      </section>
+      
+      {/* About Section */}
+      <section className="about-section">
+        {/* About Header with white line */}
+        <div className="about-header-container">
+          <div className="about-container">
+            <h2 className="about-header-title">ABOUT</h2>
+            <div className="about-header-line"></div>
           </div>
         </div>
-
-        {/* Profile image */}
-        <div className="profile-image-block">
-          <div className="profile-image-container">
-            <img src="/assets/1.jpg" alt="Silin Li" className="profile-image" />
-          </div>
-          <div className="image-caption">Portfolio — 2025</div>
-        </div>
-
-        {/* Bio block */}
-        <div className="bio-block">
-          <p className="bio-text">
-            I am a passionate creator specializing in 3D design, frontend development, and UI/UX design. I craft unique and engaging digital experiences by combining technical expertise with design aesthetics.
-          </p>
-          <p className="bio-text">
-            I excel at transforming complex design concepts into intuitive user interfaces with immersive 3D elements. With user experience at the core of my approach, each project becomes an opportunity to blend creativity, technology, and three-dimensional thinking.
-          </p>
-        </div>
-
-        {/* Contact block */}
-        <div className="contact-block">
-          <div className="contact-item">
-            <span className="contact-label">Email</span>
-            <span className="contact-value">sili50783@gmail.com</span>
-          </div>
-          <div className="contact-item">
-            <span className="contact-label">Telephone</span>
-            <span className="contact-value">0435566271</span>
-          </div>
-          <div className="contact-item">
-            <span className="contact-label">Location</span>
-            <span className="contact-value">Adelaide, Australia</span>
-          </div>
-          <div className="resume-download">
-            <a href="/resume.pdf" download className="download-button">
-              Download Resume [PDF]
-            </a>
-          </div>
-        </div>
-
-        {/* Social links */}
-        <div className="social-block">
-          <div className="social-title">CONNECT</div>
-          <div className="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              GitHub
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              LinkedIn
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
-              Instagram
-            </a>
-            <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">
-              Behance
-            </a>
+        
+        {/* About Content with white background */}
+        <div className="about-white-background">
+          <div className="about-container">
+            <div className="about-content">
+              <div className="about-image-container">
+                <img src="../assets/2.jpg" alt="Silin Li" className="about-image" />
+                <div className="image-decoration"></div>
+              </div>
+              
+              <div className="about-text">
+                <p className="about-paragraph">
+                  I am a passionate creator specializing in 3D design, frontend development, and UI/UX design. I craft unique and engaging digital experiences by combining technical expertise with design aesthetics.
+                </p>
+                
+                <p className="about-paragraph">
+                  I excel at transforming complex design concepts into intuitive user interfaces with immersive 3D elements. With user experience at the core of my approach, each project becomes an opportunity to blend creativity, technology, and three-dimensional thinking.
+                </p>
+                
+                <div className="contact-info">
+                  <div className="contact-item">
+                    <span className="contact-label">Email</span>
+                    <span className="contact-value">sili50783@gmail.com</span>
+                  </div>
+                  
+                  <div className="contact-item">
+                    <span className="contact-label">Location</span>
+                    <span className="contact-value">Adelaide, Australia</span>
+                  </div>
+                </div>
+                
+                <div className="social-links">
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
+                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="social-link">Behance</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Journey timeline */}
-        <div className="journey-block" id="journey">
-          <div className="journey-title">MY JOURNEY</div>
+      </section>
+      
+      {/* Timeline Section */}
+      <section className="timeline-section">
+        <div className="timeline-container">
+          <div className="timeline-header">
+            <h2 className="section-title">JOURNEY</h2>
+            <div className="section-line"></div>
+          </div>
+          
           <div className="timeline">
             {timelineData.map((item, index) => (
-              <div className="timeline-item" key={index}>
+              <div 
+                className={`timeline-item ${scrollPosition > 800 + (index * 100) ? 'visible' : ''}`} 
+                key={index}
+              >
                 <div className="timeline-year">{item.year}</div>
+                <div className="timeline-connector">
+                  <div className="timeline-dot"></div>
+                  <div className="timeline-line"></div>
+                </div>
                 <div className="timeline-content">
                   <h3 className="timeline-title">{item.title}</h3>
                   <p className="timeline-description">{item.description}</p>
@@ -170,35 +165,23 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        {/* Design philosophy */}
-        <div className="philosophy-block">
-          <div className="philosophy-title">DESIGN PHILOSOPHY</div>
-          <div className="philosophy-text">
-            I believe design is not just about aesthetics, but a powerful tool for solving problems. My goal is to create work that is both beautiful and functional, where every element has a purpose.
+      </section>
+      
+      {/* Skills Section */}
+      <section className="skills-section">
+        <div className="skills-container">
+          <div className="skills-header">
+            <h2 className="section-title">EXPERTISE</h2>
+            <div className="section-line"></div>
           </div>
-          <div className="principles-list">
-            {designPrinciples.map((principle, index) => (
-              <div className="principle-item" key={index}>
-                <div className="principle-number">{principle.number}</div>
-                <div className="principle-content">
-                  <h3 className="principle-title">{principle.title}</h3>
-                  <p className="principle-description">{principle.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills and expertise */}
-        <div className="skills-block">
-          <div className="skills-title">EXPERTISE</div>
+          
           <div className="skills-grid">
             {skillsData.map((skill, index) => (
-              <div className="skill-card" key={index}>
-                <div className="skill-header">
-                  <h3 className="skill-category">{skill.category}</h3>
-                </div>
+              <div 
+                className={`skill-card ${scrollPosition > 1200 + (index * 100) ? 'visible' : ''}`} 
+                key={index}
+              >
+                <h3 className="skill-title">{skill.category}</h3>
                 <p className="skill-description">{skill.description}</p>
                 <ul className="skill-list">
                   {skill.skills.map((item, i) => (
@@ -209,13 +192,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="footer-section">
-        <div className="footer-copyright">© 2025 SILIN LI. ALL RIGHTS RESERVED.</div>
-        <div className="footer-note">DESIGNED WITH MODERNIST PRINCIPLES</div>
-      </footer>
+      </section>
     </div>
   );
 };
