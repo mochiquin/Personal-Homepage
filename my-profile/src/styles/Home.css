@@ -1,53 +1,15 @@
-/* 首页页脚样式 */
-footer, .footer {
-  background-color: #000;
-  color: #fff;
-  border-top: var(--grid-border);
-}
-
-/* 确保首页页脚中所有链接和文本都是白色 */
-.home + footer a,
-.home + .footer a,
-footer.home-footer a,
-.footer.home-footer a {
-  color: var(--text-color);
-}
-
-/* 页脚分隔线 */
-.home + footer hr,
-.home + .footer hr,
-footer.home-footer hr,
-.footer.home-footer hr {
-  border-color: var(--border-color);
-}
-
-/* 页脚版权和其他文本 */
-.home + footer p,
-.home + .footer p,
-footer.home-footer p,
-.footer.home-footer p {
-  color: var(--text-secondary);
-}
-
-/* 页脚社交图标 */
-.home + footer .social-icon,
-.home + .footer .social-icon,
-footer.home-footer .social-icon,
-.footer.home-footer .social-icon {
-  color: var(--text-color);
-  border-color: var(--border-color);
-}/* styles/Home.css */
-/* 页面特定颜色变量，仅影响home页面 */
-.home {
-  --border-color: rgba(255, 255, 255, 0.1);
-  --grid-border: 1px solid var(--border-color);
-  --accent-color: #fff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --primary-color: #111;
-  --background-color: #000;
-  --text-color: #fff;
-  color: var(--text-color);
-  background-color: var(--background-color);
+/* styles/Home.css */
+/* Page-specific color variables, only affecting the home page */
+.portfolio-home {
+  --portfolio-border-color: rgba(255, 255, 255, 0.1);
+  --grid-border: 1px solid var(--portfolio-border-color);
+  --portfolio-accent-color: #fff;
+  --portfolio-text-secondary: rgba(255, 255, 255, 0.7);
+  --portfolio-primary-color: #111;
+  --portfolio-background-color: #000;
+  --portfolio-text-color: #fff;
+  color: var(--portfolio-text-color);
+  background-color: var(--portfolio-background-color);
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: auto;
@@ -55,24 +17,24 @@ footer.home-footer .social-icon,
   border-right: var(--grid-border);
 }
 
-/* 添加页面序号指示器 */
-.home::before {
+/* Add page number indicator */
+.portfolio-home::before {
   content: '1—5';
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
   font-size: 0.8rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
   z-index: 100;
 }
 
-/* 按钮样式 - 仅限home页面 */
-.home .btn {
+/* Button styles - only for home page */
+.portfolio-home .portfolio-btn {
   display: inline-block;
   padding: 0.8rem 2rem;
   background-color: transparent;
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
+  border: 1px solid var(--portfolio-text-color);
+  color: var(--portfolio-text-color);
   font-size: 0.9rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -83,24 +45,24 @@ footer.home-footer .social-icon,
   position: relative;
 }
 
-.home .btn:hover {
-  background-color: var(--text-color);
-  color: var(--background-color);
+.portfolio-home .portfolio-btn:hover {
+  background-color: var(--portfolio-text-color);
+  color: var(--portfolio-background-color);
 }
 
-.home .btn-accent {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--background-color);
+.portfolio-home .portfolio-btn-accent {
+  background-color: var(--portfolio-accent-color);
+  border-color: var(--portfolio-accent-color);
+  color: var(--portfolio-background-color);
 }
 
-.home .btn-accent:hover {
+.portfolio-home .portfolio-btn-accent:hover {
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--portfolio-accent-color);
 }
 
 /* Hero section */
-.hero {
+.portfolio-hero {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -113,7 +75,7 @@ footer.home-footer .social-icon,
   border-bottom: var(--grid-border);
 }
 
-.hero::after {
+.portfolio-hero::after {
   content: '';
   position: absolute;
   top: 0;
@@ -126,7 +88,7 @@ footer.home-footer .social-icon,
   pointer-events: none;
 }
 
-.hero::before {
+.portfolio-hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -136,7 +98,7 @@ footer.home-footer .social-icon,
   z-index: -2;
 }
   
-.hero-content {
+.portfolio-hero-content {
   width: 90%;
   max-width: 1440px;
   z-index: 1;
@@ -144,12 +106,12 @@ footer.home-footer .social-icon,
   padding: 2rem;
 }
   
-.hero-text {
+.portfolio-hero-text {
   max-width: 800px;
   transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
   
-.hero-heading {
+.portfolio-hero-heading {
   font-size: clamp(3rem, 10vw, 8rem);
   font-weight: 800;
   line-height: 1;
@@ -159,20 +121,20 @@ footer.home-footer .social-icon,
   flex-direction: column;
 }
   
-.hero-heading span {
+.portfolio-hero-heading span {
   display: block;
   opacity: 0;
   animation: fadeIn 0.8s forwards;
 }
   
-.hero-heading span:nth-child(1) {
+.portfolio-hero-heading span:nth-child(1) {
   animation-delay: 0.3s;
   color: #ffffff;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
 }
   
-.hero-heading span:nth-child(2) {
+.portfolio-hero-heading span:nth-child(2) {
   animation-delay: 0.6s;
   color: #ffffff;
   font-family: 'Rajdhani', sans-serif;
@@ -180,20 +142,20 @@ footer.home-footer .social-icon,
   font-weight: 600;
 }
   
-.hero-heading span:nth-child(3) {
+.portfolio-hero-heading span:nth-child(3) {
   animation-delay: 0.9s;
   color: #ffffff;
   font-family: 'Syncopate', sans-serif;
   margin-left: 6rem;
 }
   
-.hero-heading span:hover {
+.portfolio-hero-heading span:hover {
   text-shadow: 0 0 15px currentColor;
   transform: translateX(10px);
   transition: all 0.3s ease;
 }
   
-.hero-subheading {
+.portfolio-hero-subheading {
   font-size: clamp(1rem, 3vw, 1.5rem);
   margin-bottom: 2rem;
   opacity: 0;
@@ -201,7 +163,7 @@ footer.home-footer .social-icon,
   animation-delay: 1.2s;
 }
   
-.hero-cta {
+.portfolio-hero-cta {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
@@ -210,7 +172,7 @@ footer.home-footer .social-icon,
   animation-delay: 1.5s;
 }
 
-.hero-circle {
+.portfolio-hero-circle {
   position: absolute;
   width: 400px;
   height: 400px;
@@ -221,26 +183,26 @@ footer.home-footer .social-icon,
   animation: none;
 }
 
-.circle-svg {
+.portfolio-circle-svg {
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease-out;
 }
 
-.hero-circle::after {
+.portfolio-hero-circle::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   width: 15px;
   height: 15px;
-  background-color: var(--accent-color, #ffffff);
+  background-color: var(--portfolio-accent-color, #ffffff);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 15px var(--accent-color, #ffffff);
+  box-shadow: 0 0 15px var(--portfolio-accent-color, #ffffff);
 }
 
-.hero-circle::before {
+.portfolio-hero-circle::before {
   content: '';
   position: absolute;
   width: 8px;
@@ -254,7 +216,7 @@ footer.home-footer .social-icon,
   animation: pulseLight 2s infinite alternate;
 }
   
-.scroll-indicator {
+.portfolio-scroll-indicator {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -267,27 +229,27 @@ footer.home-footer .social-icon,
   animation-delay: 2s;
 }
   
-.scroll-indicator span {
+.portfolio-scroll-indicator span {
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
   
-.scroll-arrow {
+.portfolio-scroll-arrow {
   width: 30px;
   height: 50px;
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--portfolio-text-color);
   border-radius: 15px;
   position: relative;
 }
   
-.scroll-arrow::before {
+.portfolio-scroll-arrow::before {
   content: '';
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: var(--text-color);
+  background-color: var(--portfolio-text-color);
   border-radius: 50%;
   top: 10px;
   left: 50%;
@@ -295,27 +257,27 @@ footer.home-footer .social-icon,
   animation: scroll 2s infinite;
 }
 
-/* 网格结构 - 仅限home页面的section */
-.home .section {
+/* Grid structure - only for sections in the home page */
+.portfolio-home .portfolio-section {
   border-bottom: var(--grid-border);
   padding: 0;
   margin: 0;
   position: relative;
 }
 
-/* 添加垂直引导线 */
-.home .section::before {
+/* Add vertical guide lines */
+.portfolio-home .portfolio-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 120px;
   height: 100%;
   width: 1px;
-  background-color: var(--border-color);
+  background-color: var(--portfolio-border-color);
   z-index: 1;
 }
 
-.home .container {
+.portfolio-home .portfolio-container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
@@ -324,11 +286,11 @@ footer.home-footer .social-icon,
 }
 
 /* Intro section */
-.intro {
-  background-color: var(--primary-color);
+.portfolio-intro {
+  background-color: var(--portfolio-primary-color);
 }
   
-.intro-content {
+.portfolio-intro-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
@@ -336,41 +298,41 @@ footer.home-footer .social-icon,
   min-height: 60vh;
 }
   
-.intro-title {
+.portfolio-intro-title {
   position: relative;
-  padding: 4rem 4rem 4rem 160px; /* 增加左边距，为垂直线留出空间 */
+  padding: 4rem 4rem 4rem 160px; /* Add left margin for vertical line */
   border-right: var(--grid-border);
 }
   
-.intro-title h2 {
+.portfolio-intro-title h2 {
   position: relative;
   margin-bottom: 2rem;
-  font-size: 5rem; /* 更大的字体 */
+  font-size: 5rem; /* Larger font */
   letter-spacing: -1px;
   line-height: 1.1;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-/* 添加标题编号 */
-.intro-title h2::before {
+/* Add title numbering */
+.portfolio-intro-title h2::before {
   content: '01';
   position: absolute;
   left: -40px;
   top: 0;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
 }
   
-.line {
+.portfolio-line {
   width: 50px;
   height: 4px;
-  background-color: var(--accent-color);
+  background-color: var(--portfolio-accent-color);
   margin-top: 1rem;
 }
   
-.intro-text {
+.portfolio-intro-text {
   padding: 4rem 4rem 4rem 3rem;
   display: flex;
   flex-direction: column;
@@ -378,124 +340,124 @@ footer.home-footer .social-icon,
   position: relative;
 }
 
-.intro-text p {
+.portfolio-intro-text p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   line-height: 1.7;
   max-width: 90%;
 }
 
-/* 添加垂直数字指示器 */
-.featured-projects::before {
+/* Add vertical number indicators */
+.portfolio-featured-projects::before {
   content: '02';
   position: absolute;
   top: 4rem;
   left: 120px;
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
 }
 
-.skills-overview::before {
+.portfolio-skills-overview::before {
   content: '03';
   position: absolute;
   top: 4rem;
   left: 120px;
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
 }
 
-.contact-cta::before {
+.portfolio-contact-cta::before {
   content: '04';
   position: absolute;
   top: 4rem;
   left: 120px;
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
 }
   
-.text-link {
+.portfolio-text-link {
   display: inline-block;
   font-weight: 500;
   font-size: 1.1rem;
-  color: var(--accent-color);
+  color: var(--portfolio-accent-color);
   position: relative;
   margin-top: auto;
 }
   
-.text-link::after {
+.portfolio-text-link::after {
   content: '';
   position: absolute;
   bottom: -5px;
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: var(--portfolio-accent-color);
   transition: width 0.3s ease;
 }
   
-.text-link:hover::after {
+.portfolio-text-link:hover::after {
   width: 100%;
 }
   
-.text-link span {
+.portfolio-text-link span {
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
   
-.text-link:hover span {
+.portfolio-text-link:hover span {
   transform: translateX(5px);
 }
   
 /* Projects section */
-.featured-projects {
-  background-color: var(--background-color);
+.portfolio-featured-projects {
+  background-color: var(--portfolio-background-color);
 }
   
-.section-header {
+.portfolio-section-header {
   text-align: left;
   padding: 4rem 4rem 2rem;
   border-bottom: var(--grid-border);
 }
   
-.section-header h2 {
+.portfolio-section-header h2 {
   margin-bottom: 1rem;
 }
   
-.section-header p {
+.portfolio-section-header p {
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
 }
   
-.projects-grid {
+.portfolio-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-bottom: var(--grid-border);
 }
   
-.project-card.featured {
+.portfolio-project-card.portfolio-featured {
   grid-column: 1 / -1;
   border-bottom: var(--grid-border);
 }
   
-.home .project-card {
+.portfolio-home .portfolio-project-card {
   position: relative;
-  overflow: visible; /* 允许内容溢出 */
+  overflow: visible; /* Allow content overflow */
   transition: transform 0.3s ease;
-  min-height: 60vh; /* 增加最小高度 */
+  min-height: 60vh; /* Increase minimum height */
   border-right: var(--grid-border);
-  max-height: none; /* 移除最大高度限制 */
+  max-height: none; /* Remove maximum height restriction */
 }
 
-/* 添加项目编号位置和样式调整 */
-.home .project-card:nth-child(1) .project-meta::before,
-.home .project-card:nth-child(2) .project-meta::before,
-.home .project-card:nth-child(3) .project-meta::before {
+/* Add project numbering position and style adjustments */
+.portfolio-home .portfolio-project-card:nth-child(1) .portfolio-project-meta::before,
+.portfolio-home .portfolio-project-card:nth-child(2) .portfolio-project-meta::before,
+.portfolio-home .portfolio-project-card:nth-child(3) .portfolio-project-meta::before {
   top: -30px;
   left: 0;
   font-size: 0.8rem;
@@ -504,35 +466,35 @@ footer.home-footer .social-icon,
   letter-spacing: 1px;
 }
 
-.home .project-image {
+.portfolio-home .portfolio-project-image {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; /* 图片内容不溢出 */
+  overflow: hidden; /* Image content doesn't overflow */
 }
   
-.project-image img, .placeholder-img {
+.portfolio-project-image img, .portfolio-placeholder-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
   
-.placeholder-img {
+.portfolio-placeholder-img {
   background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-color);
+  color: var(--portfolio-accent-color);
   font-weight: 500;
   font-size: 1.2rem;
 }
   
-.project-card:hover .project-image img {
+.portfolio-project-card:hover .portfolio-project-image img {
   transform: scale(1.05);
 }
   
-.project-overlay {
+.portfolio-project-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -546,23 +508,23 @@ footer.home-footer .social-icon,
   transition: opacity 0.3s ease;
 }
   
-.project-card:hover .project-overlay {
+.portfolio-project-card:hover .portfolio-project-overlay {
   opacity: 1;
 }
   
-.project-meta-header {
+.portfolio-project-meta-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.project-title {
-  margin: 0; /* 移除标题默认边距 */
+.portfolio-project-title {
+  margin: 0; /* Remove title default margins */
 }
 
-/* 添加项目编号 */
-.project-card:nth-child(1) .project-meta::before {
+/* Add project numbering */
+.portfolio-project-card:nth-child(1) .portfolio-project-meta::before {
   content: 'P.01';
   position: absolute;
   top: -20px;
@@ -573,7 +535,7 @@ footer.home-footer .social-icon,
   letter-spacing: 1px;
 }
 
-.project-card:nth-child(2) .project-meta::before {
+.portfolio-project-card:nth-child(2) .portfolio-project-meta::before {
   content: 'P.02';
   position: absolute;
   top: -20px;
@@ -584,7 +546,7 @@ footer.home-footer .social-icon,
   letter-spacing: 1px;
 }
 
-.project-card:nth-child(3) .project-meta::before {
+.portfolio-project-card:nth-child(3) .portfolio-project-meta::before {
   content: 'P.03';
   position: absolute;
   top: -20px;
@@ -595,59 +557,59 @@ footer.home-footer .social-icon,
   letter-spacing: 1px;
 }
   
-.project-card:hover .project-meta {
+.portfolio-project-card:hover .portfolio-project-meta {
   transform: translateY(0);
   opacity: 1;
 }
   
-.project-category {
+.portfolio-project-category {
   display: inline-block;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--accent-color);
+  color: var(--portfolio-accent-color);
   margin-bottom: 0.5rem;
 }
   
-.project-title {
+.portfolio-project-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
   
-.project-description {
+.portfolio-project-description {
   font-size: 0.9rem;
   margin-bottom: 2rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
 }
   
-.section-footer {
+.portfolio-section-footer {
   display: flex;
   justify-content: center;
   padding: 2rem;
 }
   
 /* Skills section */
-.skills-overview {
-  background-color: var(--primary-color);
+.portfolio-skills-overview {
+  background-color: var(--portfolio-primary-color);
   position: relative;
   overflow: hidden;
 }
   
-.skills-content {
+.portfolio-skills-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 60vh;
 }
   
-.skills-text {
-  padding: 4rem 4rem 4rem 160px; /* 增加左边距，为垂直线留出空间 */
+.portfolio-skills-text {
+  padding: 4rem 4rem 4rem 160px; /* Add left margin for vertical line */
   border-right: var(--grid-border);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.skills-text h2 {
+.portfolio-skills-text h2 {
   margin-bottom: 1.5rem;
   font-size: 4rem;
   font-weight: 700;
@@ -656,21 +618,21 @@ footer.home-footer .social-icon,
   line-height: 1.1;
 }
   
-.skills-text p {
+.portfolio-skills-text p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   line-height: 1.7;
   max-width: 90%;
 }
 
-.skills-text .btn {
+.portfolio-skills-text .portfolio-btn {
   margin-top: auto;
   align-self: flex-start;
   position: relative;
 }
 
-/* 添加箭头指示 */
-.btn::after {
+/* Add arrow indicator */
+.portfolio-btn::after {
   content: '→';
   position: absolute;
   right: -20px;
@@ -680,12 +642,12 @@ footer.home-footer .social-icon,
   transition: all 0.3s ease;
 }
 
-.btn:hover::after {
+.portfolio-btn:hover::after {
   right: -25px;
   opacity: 1;
 }
   
-.skills-showcase {
+.portfolio-skills-showcase {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -693,19 +655,19 @@ footer.home-footer .social-icon,
   justify-content: center;
 }
   
-.skill-category h3 {
+.portfolio-skill-category h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: var(--accent-color);
+  color: var(--portfolio-accent-color);
 }
   
-.skill-tags {
+.portfolio-skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
 }
   
-.skill-tag {
+.portfolio-skill-tag {
   padding: 0.5rem 1rem;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 4px;
@@ -713,15 +675,15 @@ footer.home-footer .social-icon,
   transition: all 0.3s ease;
 }
   
-.skill-tag:hover {
-  background-color: var(--accent-color);
-  color: var(--primary-color);
+.portfolio-skill-tag:hover {
+  background-color: var(--portfolio-accent-color);
+  color: var(--portfolio-primary-color);
   transform: translateY(-3px);
 }
   
 /* Contact section */
-.contact-cta {
-  background-color: var(--background-color);
+.portfolio-contact-cta {
+  background-color: var(--portfolio-background-color);
   position: relative;
   overflow: hidden;
   min-height: 40vh;
@@ -729,24 +691,24 @@ footer.home-footer .social-icon,
   align-items: center;
 }
   
-.cta-content {
+.portfolio-cta-content {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
   padding: 4rem;
 }
   
-.cta-content h2 {
+.portfolio-cta-content h2 {
   margin-bottom: 1rem;
 }
   
-.cta-content p {
+.portfolio-cta-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: var(--text-secondary);
+  color: var(--portfolio-text-secondary);
 }
   
-.cta-decoration {
+.portfolio-cta-decoration {
   position: absolute;
   top: 0;
   right: 0;
@@ -756,7 +718,7 @@ footer.home-footer .social-icon,
   pointer-events: none;
 }
   
-.decoration-circle {
+.portfolio-decoration-circle {
   position: absolute;
   width: 300px;
   height: 300px;
@@ -767,7 +729,7 @@ footer.home-footer .social-icon,
   transform: translateY(-50%);
 }
   
-.decoration-line {
+.portfolio-decoration-line {
   position: absolute;
   width: 100%;
   height: 2px;
@@ -826,7 +788,7 @@ footer.home-footer .social-icon,
   
 /* Responsive design */
 @media screen and (max-width: 1200px) {
-  .hero-circle {
+  .portfolio-hero-circle {
     width: 300px;
     height: 300px;
     right: -50px;
@@ -834,65 +796,65 @@ footer.home-footer .social-icon,
 }
 
 @media screen and (max-width: 900px) {
-  .intro-content,
-  .skills-content {
+  .portfolio-intro-content,
+  .portfolio-skills-content {
     grid-template-columns: 1fr;
   }
   
-  .intro-title,
-  .skills-text {
+  .portfolio-intro-title,
+  .portfolio-skills-text {
     border-right: none;
     border-bottom: var(--grid-border);
   }
   
-  .projects-grid {
+  .portfolio-projects-grid {
     grid-template-columns: 1fr;
   }
   
-  .hero-circle {
+  .portfolio-hero-circle {
     display: none;
   }
   
-  .project-card {
+  .portfolio-project-card {
     border-right: none;
     border-bottom: var(--grid-border);
   }
   
-  .project-card:last-child {
+  .portfolio-project-card:last-child {
     border-bottom: none;
   }
 }
   
 @media screen and (max-width: 600px) {
-  .hero-heading {
+  .portfolio-hero-heading {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
   
-  .hero-cta {
+  .portfolio-hero-cta {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .hero-cta .btn {
+  .portfolio-hero-cta .portfolio-btn {
     width: 100%;
     text-align: center;
   }
   
-  .intro-title,
-  .intro-text,
-  .skills-text,
-  .skills-showcase,
-  .section-header {
+  .portfolio-intro-title,
+  .portfolio-intro-text,
+  .portfolio-skills-text,
+  .portfolio-skills-showcase,
+  .portfolio-section-header {
     padding: 2rem;
   }
 }
 @media screen and (max-width: 768px) {
-  .project-meta-header {
+  .portfolio-project-meta-header {
     flex-direction: column;
     align-items: flex-start;
   }
   
-  .project-meta-header .btn {
+  .portfolio-project-meta-header .portfolio-btn {
     margin-top: 15px;
   }
 }

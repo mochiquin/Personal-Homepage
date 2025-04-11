@@ -1,32 +1,35 @@
 // components/Footer.jsx
+// A responsive footer component with navigation, social media links, and contact information
+// Modified with unique class names and dark theme
+
 import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
+  
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-top">
-          <div className="footer-logo">
+    <footer className="portfolio-footer">
+      <div className="portfolio-footer-container">
+        <div className="portfolio-footer-top">
+          <div className="portfolio-footer-logo">
             <span>YOUR</span>NAME
           </div>
           
-          <div className="footer-links">
-            <div className="footer-nav">
-              <h3>导航</h3>
+          <div className="portfolio-footer-links">
+            <div className="portfolio-footer-nav">
+              <h3>Navigation</h3>
               <ul>
-                <li><Link to="/">首页</Link></li>
-                <li><Link to="/about">关于</Link></li>
-                <li><Link to="/projects">项目</Link></li>
-                <li><Link to="/skills">技能</Link></li>
-                <li><Link to="/contact">联系</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/projects">Projects</Link></li>
+                <li><Link to="/skills">Skills</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
             
-            <div className="footer-social">
-              <h3>社交媒体</h3>
+            <div className="portfolio-footer-social">
+              <h3>Social Media</h3>
               <ul>
                 <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -35,22 +38,22 @@ const Footer = () => {
               </ul>
             </div>
             
-            <div className="footer-contact">
-              <h3>联系方式</h3>
+            <div className="portfolio-footer-contact">
+              <h3>Contact</h3>
               <ul>
                 <li>email@example.com</li>
                 <li>+86 123 4567 8900</li>
-                <li>中国，城市</li>
+                <li>City, Country</li>
               </ul>
             </div>
           </div>
         </div>
         
-        <div className="footer-bottom">
-          <p>&copy; {currentYear} YOUR NAME. 版权所有</p>
-          <div className="footer-bottom-links">
-            <a href="#">隐私政策</a>
-            <a href="#">服务条款</a>
+        <div className="portfolio-footer-bottom">
+          <p>&copy; {currentYear} YOUR NAME. All Rights Reserved</p>
+          <div className="portfolio-footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
         </div>
       </div>

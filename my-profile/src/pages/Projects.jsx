@@ -1,28 +1,49 @@
 // src/pages/Projects.js
 import { useState } from 'react';
-import { projects } from '../data/projects';
 import '../styles/Projects.css';
 
 function Projects() {
   const [filter, setFilter] = useState('all');
   
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  // Project data
+  const projects = [
+    {
+      id: 1,
+      title: "Personal Portfolio Website",
+      description: "A responsive portfolio website built with React to showcase my projects and skills. Features include dark/light mode, smooth animations, and a contact form.",
+      technologies: ["React", "JavaScript", "CSS", "HTML"],
+      codeUrl: "https://github.com/yourusername/portfolio-website",
+      demoUrl: "https://yourwebsite.com",
+      image: "/images/portfolio-project.jpg"
+    },
+    {
+      id: 2,
+      title: "Atomic Heart Illustrations",
+      description: "A collection of digital illustrations inspired by the Atomic Heart game. Created using professional design tools with attention to detail and art direction.",
+      technologies: ["Photoshop", "Illustrator", "Digital Art"],
+      codeUrl: "https://github.com/yourusername/atomic-heart-illustrations",
+      demoUrl: "https://behance.net/yourusername/atomic-heart",
+      image: "/images/atomic-heart-illustrations.jpg"
+    }
+  ];
+  
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.technologies.includes(filter));
     
   return (
-    <div className="projects-container">
-      <section className="projects-intro">
-        <h1>我的项目作品</h1>
-        <p>这里展示了我最近完成的一些项目。每个项目都展示了我的技能和解决问题的能力。</p>
-      </section>
+    <div className="projects-page-container">
+      <div className="projects-page-header">
+        <h1>My Projects</h1>
+        <p>Here are some of my recent projects showcasing my skills and problem-solving abilities.</p>
+      </div>
       
-      <section className="projects-filter">
+      <div className="projects-filter-buttons">
         <button 
           className={filter === 'all' ? 'active' : ''} 
           onClick={() => setFilter('all')}
         >
-          全部
+          All
         </button>
         <button 
           className={filter === 'React' ? 'active' : ''} 
@@ -31,40 +52,45 @@ function Projects() {
           React
         </button>
         <button 
-          className={filter === 'Vue' ? 'active' : ''} 
-          onClick={() => setFilter('Vue')}
+          className={filter === 'Digital Art' ? 'active' : ''} 
+          onClick={() => setFilter('Digital Art')}
         >
-          Vue
+          Digital Art
         </button>
-        {/* 添加更多筛选按钮 */}
-      </section>
+        <button 
+          className={filter === 'JavaScript' ? 'active' : ''} 
+          onClick={() => setFilter('JavaScript')}
+        >
+          JavaScript
+        </button>
+      </div>
       
-      <section className="projects-grid">
+      <div className="projects-grid-layout">
         {filteredProjects.map(project => (
-          <div className="project-card" key={project.id}>
-            <div className="project-image">
+          <div className="project-item-card" key={project.id}>
+            <div className="project-item-image">
               <img src={project.image} alt={project.title} />
             </div>
-            <div className="project-content">
-              <h3>{project.title}</h3>
+            <div className="project-item-content">
+              <h2>{project.title}</h2>
               <p>{project.description}</p>
-              <div className="project-tech">
+              <div className="project-item-technologies">
                 {project.technologies.map(tech => (
-                  <span key={tech} className="tech-tag">{tech}</span>
+                  <span className="project-tech-tag" key={tech}>{tech}</span>
                 ))}
               </div>
-              <div className="project-links">
-                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm">
-                  查看代码
+              <div className="project-item-links">
+                <a href={project.codeUrl} className="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  View Code
                 </a>
-                <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
-                  在线演示
+                <a href={project.demoUrl} className="project-link-btn project-link-btn-primary" target="_blank" rel="noopener noreferrer">
+                  Live Demo
                 </a>
               </div>
             </div>
           </div>
         ))}
-      </section>
+      </div>
     </div>
   );
 }

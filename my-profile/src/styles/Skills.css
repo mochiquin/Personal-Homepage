@@ -1,391 +1,482 @@
-/* styles/Skills.css */
-/* 头部区域 */
+/* Skills.css */
+:root {
+  --background-color: #121212;
+  --primary-color: #1a1a1a;
+  --accent-color: #0066cc;
+  --text-color: #ffffff;
+  --text-secondary: #aaaaaa;
+  --dark-gray: #2a2a2a;
+  --medium-gray: #333333;
+  --light-gray: #444444;
+}
+
+.skills-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-section {
+  padding: 5rem 0;
+}
+
+.skills-section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+/* Header area */
 .skills-header {
-    height: 40vh;
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+  height: 40vh;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.skills-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary-color), transparent);
+  z-index: 1;
+}
+
+.skills-header-content {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.skills-header h1 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.skills-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Skills showcase area */
+.skills-showcase {
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.skills-tabs {
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-tabs-header {
+  display: flex;
+  background-color: var(--medium-gray);
+  justify-content: center;
+}
+
+.skills-tab-btn {
+  padding: 1.2rem 2rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+  min-width: 180px;
+  text-align: center;
+}
+
+.skills-tab-btn:hover {
+  background-color: var(--light-gray);
+}
+
+.skills-tab-btn.active {
+  background-color: var(--light-gray);
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.skills-tabs-content {
+  padding: 2rem;
+}
+
+.skills-tab-pane {
+  display: none;
+}
+
+.skills-tab-pane.active {
+  display: block;
+  animation: skills-fadeIn 0.5s ease;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skills-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 300px;
+  text-align: left;
+}
+
+.skills-item:hover {
+  transform: translateY(-5px);
+  background-color: var(--medium-gray);
+}
+
+.skills-item-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--medium-gray);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.skills-item-info {
+  flex: 1;
+}
+
+.skills-item-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.skills-level {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skills-bar {
+  flex: 1;
+  height: 6px;
+  background-color: var(--medium-gray);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skills-progress {
+  height: 100%;
+  background-color: var(--accent-color);
+}
+
+.skills-percentage {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* Expertise area */
+.skills-expertise {
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.skills-expertise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-expertise-card {
+  background-color: var(--dark-gray);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.skills-expertise-card:hover {
+  transform: translateY(-10px);
+  background-color: var(--medium-gray);
+}
+
+.skills-expertise-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--medium-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2.5rem;
+}
+
+.skills-expertise-icon i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.skills-expertise-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.skills-expertise-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Workflow area */
+.skills-workflow {
+  background-color: var(--background-color);
+  position: relative;
+  text-align: center;
+}
+
+.skills-workflow-steps {
+  margin-top: 4rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 30px;
+}
+
+.skills-workflow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.skills-workflow-step:last-child {
+  margin-bottom: 0;
+}
+
+.skills-step-number {
+  width: 60px;
+  height: 60px;
+  background-color: var(--dark-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.skills-step-content {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.skills-step-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.skills-step-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Stats area */
+.skills-stats {
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.skills-stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-stat-item {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  width: 200px;
+}
+
+.skills-stat-item:hover {
+  transform: translateY(-5px);
+  background-color: var(--medium-gray);
+}
+
+.skills-stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.skills-stat-label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+/* CTA area */
+.skills-cta {
+  background-color: var(--background-color);
+  position: relative;
+  text-align: center;
+}
+
+.skills-cta-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--dark-gray);
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.skills-cta-content h2 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.skills-cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.skills-btn-accent {
+  display: inline-block;
+  margin: 20px auto 0;
+  padding: 12px 30px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.skills-btn-accent:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: #007bf6;
+}
+
+/* Animation */
+@keyframes skills-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+  .skills-stats-grid {
+    justify-content: center;
   }
   
-  .skills-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+  .skills-stat-item {
+    width: calc(50% - 2rem);
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills-tabs-header {
+    flex-wrap: wrap;
+  }
+  
+  .skills-tab-btn {
+    padding: 1rem;
+    min-width: 150px;
+  }
+  
+  .skills-item {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), transparent);
-    z-index: 1;
+    max-width: 400px;
   }
   
-  .skills-header-content {
-    width: 90%;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    padding-top: 5rem;
+  .skills-expertise-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .skills-item,
+  .skills-expertise-card,
+  .skills-stat-item {
+    width: 100%;
   }
   
-  .skills-header h1 {
-    margin-bottom: 1rem;
+  .skills-tab-btn {
+    width: 100%;
   }
   
-  .skills-header p {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
+  .skills-header {
+    height: 30vh;
   }
   
-  /* 技能展示区域 */
-  .skills-showcase {
-    background-color: var(--background-color);
+  .skills-step-content {
+    padding: 0;
   }
-  
-  .skills-tabs {
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .tabs-header {
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.03);
-  }
-  
-  .tab-btn {
-    padding: 1.2rem 2rem;
-    background: transparent;
-    border: none;
-    color: var(--text-color);
-    font-size: 1rem;
-    cursor: pointer;
-    flex: 1;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
-  }
-  
-  .tab-btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .tab-btn.active {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-bottom: 2px solid var(--accent-color);
-    color: var(--accent-color);
-  }
-  
-  .tabs-content {
-    padding: 2rem;
-  }
-  
-  .tab-pane {
-    display: none;
-  }
-  
-  .tab-pane.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
-  }
-  
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  .skill-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .skill-icon {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-color);
-    font-size: 1.5rem;
-  }
-  
-  .skill-info {
-    flex: 1;
-  }
-  
-  .skill-info h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .skill-level {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .skill-bar {
-    flex: 1;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  
-  .skill-progress {
-    height: 100%;
-    background-color: var(--accent-color);
-  }
-  
-  .skill-percentage {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-  }
-  
-  /* 专业领域部分 */
-  .expertise-section {
-    background-color: var(--primary-color);
-  }
-  
-  .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-  }
-  
-  .expertise-card {
-    background-color: rgba(255, 255, 255, 0.02);
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
-    height: 100%;
-  }
-  
-  .expertise-card:hover {
-    transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .expertise-icon {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-  }
-  
-  .expertise-icon i {
-    font-size: 1.8rem;
-    color: var(--accent-color);
-  }
-  
-  .expertise-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-  }
-  
-  .expertise-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  /* 工作流程部分 */
-  .workflow-section {
-    background-color: var(--background-color);
-    position: relative;
-  }
-  
-  .workflow-steps {
-    margin-top: 4rem;
-    position: relative;
-  }
-  
-  .workflow-steps::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50px;
-    width: 2px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .workflow-step {
-    display: flex;
-    margin-bottom: 3rem;
-    position: relative;
-  }
-  
-  .workflow-step:last-child {
-    margin-bottom: 0;
-  }
-  
-  .step-number {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    position: relative;
-    z-index: 2;
-  }
-  
-  .step-content {
-    flex: 1;
-    padding-left: 2rem;
-    padding-top: 1rem;
-  }
-  
-  .step-content h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .step-content p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-  
-  /* 技能统计部分 */
-  .skills-stats {
-    background-color: var(--primary-color);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-  
-  .stat-item {
-    text-align: center;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  .stat-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--accent-color);
-  }
-  
-  .stat-label {
-    font-size: 1.1rem;
-    color: var(--text-color);
-  }
-  
-  /* CTA部分 */
-  .skills-cta {
-    background-color: var(--background-color);
-    position: relative;
-  }
-  
-  .cta-content {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .cta-content h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .cta-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: var(--text-secondary);
-  }
-  
-  /* 动画 */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* 响应式设计 */
-  @media screen and (max-width: 1024px) {
-    .stats-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .tabs-header {
-      flex-wrap: wrap;
-    }
-    
-    .tab-btn {
-      padding: 1rem;
-      flex-basis: 50%;
-    }
-    
-    .workflow-step {
-      flex-direction: column;
-    }
-    
-    .workflow-steps::before {
-      left: 50px;
-      height: calc(100% - 100px);
-      top: 100px;
-    }
-    
-    .step-number {
-      margin-bottom: 1.5rem;
-    }
-    
-    .step-content {
-      padding-left: 0;
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .skills-grid,
-    .expertise-grid,
-    .stats-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .tab-btn {
-      flex-basis: 100%;
-    }
-  }
+}

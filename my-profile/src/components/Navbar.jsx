@@ -24,11 +24,11 @@ const Navbar = () => {
   }, [scrolled]);
 
   useEffect(() => {
-    // 关闭菜单当路由改变
+    // Close menu when route changes
     setMenuOpen(false);
   }, [location]);
 
-  // 处理菜单切换
+  // Handle menu toggle
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -44,27 +44,27 @@ const Navbar = () => {
           <ul className="navbar-links">
             <li>
               <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-                首页
+                Home
               </Link>
             </li>
             <li>
               <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
-                关于
+                About
               </Link>
             </li>
             <li>
               <Link to="/projects" className={location.pathname === '/projects' ? 'active' : ''}>
-                项目
+                Projects
               </Link>
             </li>
             <li>
               <Link to="/skills" className={location.pathname === '/skills' ? 'active' : ''}>
-                技能
+                Skills
               </Link>
             </li>
             <li>
               <Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''}>
-                联系
+                Contact
               </Link>
             </li>
           </ul>

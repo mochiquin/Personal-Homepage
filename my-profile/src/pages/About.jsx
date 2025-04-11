@@ -70,25 +70,25 @@ const About = () => {
   };
 
   return (
-    <div className="kojima-container">
+    <div className="about-page">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <div className="hero-title-container">
-            <h1 className="hero-title">SILIN LI</h1>
-            <div className="hero-subtitle">CREATOR | DEVELOPER | DESIGNER</div>
+      <section className="about-hero-section">
+        <div className="about-hero-content">
+          <div className="about-hero-title-container">
+            <h1 className="about-hero-title">SILIN LI</h1>
+            <div className="about-hero-subtitle">CREATOR | DEVELOPER | DESIGNER</div>
           </div>
-          <div className="scroll-prompt">
+          <div className="about-scroll-prompt">
             <span>Scroll to explore</span>
-            <div className="scroll-arrow"></div>
+            <div className="about-scroll-arrow"></div>
           </div>
         </div>
-        <div className="hero-overlay"></div>
-        <div className="hero-bg" style={{backgroundImage: "url('../assets/hero-bg.jpg')"}}></div>
+        <div className="about-hero-overlay"></div>
+        <div className="about-hero-bg" style={{backgroundImage: "url('../assets/hero-bg.jpg')"}}></div>
       </section>
       
       {/* About Section - Kojima Inspired Vertical Text */}
-      <section className="about-section">
+      <section className="about-info-section">
         {/* About Header with white line */}
         <div className="about-header-container">
           <div className="about-container">
@@ -98,45 +98,45 @@ const About = () => {
         </div>
         
         {/* Redesigned About Content with background image and vertical text */}
-        <div className="kojima-about-background">
-          <div className="kojima-about-container">
-            <div className="kojima-about-content">
-              <div className="kojima-vertical-text">
-                <p className="kojima-text-line">I am a passionate creator specializing in 3D design,</p>
-                <p className="kojima-text-line">frontend development, and UI/UX design.</p>
-                <p className="kojima-text-line">I craft unique digital experiences by combining</p>
-                <p className="kojima-text-line">technical expertise with design aesthetics.</p>
-                <p className="kojima-text-line">I excel at transforming complex design concepts</p>
-                <p className="kojima-text-line">into intuitive user interfaces with immersive 3D elements.</p>
-                <p className="kojima-text-line">With user experience at the core of my approach,</p>
-                <p className="kojima-text-line">each project becomes an opportunity to blend creativity,</p>
-                <p className="kojima-text-line">technology, and three-dimensional thinking.</p>
+        <div className="about-background">
+          <div className="about-content-container">
+            <div className="about-content">
+              <div className="about-vertical-text">
+                <p className="about-text-line">I am a passionate creator specializing in 3D design,</p>
+                <p className="about-text-line">frontend development, and UI/UX design.</p>
+                <p className="about-text-line">I craft unique digital experiences by combining</p>
+                <p className="about-text-line">technical expertise with design aesthetics.</p>
+                <p className="about-text-line">I excel at transforming complex design concepts</p>
+                <p className="about-text-line">into intuitive user interfaces with immersive 3D elements.</p>
+                <p className="about-text-line">With user experience at the core of my approach,</p>
+                <p className="about-text-line">each project becomes an opportunity to blend creativity,</p>
+                <p className="about-text-line">technology, and three-dimensional thinking.</p>
               </div>
               
-              <div className="kojima-profile-section">
-                <div className="kojima-profile-image">
+              <div className="about-profile-section">
+                <div className="about-profile-image">
                   <img src="../assets/2.jpg" alt="Silin Li" />
                 </div>
                 
-                <div className="kojima-contact-info">
-                  <div className="kojima-info-item">
-                    <span className="kojima-info-label">Email</span>
-                    <span className="kojima-info-value">sili50783@gmail.com</span>
+                <div className="about-contact-info">
+                  <div className="about-info-item">
+                    <span className="about-info-label">Email</span>
+                    <span className="about-info-value">sili50783@gmail.com</span>
                   </div>
                   
-                  <div className="kojima-info-item">
-                    <span className="kojima-info-label">Location</span>
-                    <span className="kojima-info-value">Adelaide, Australia</span>
+                  <div className="about-info-item">
+                    <span className="about-info-label">Location</span>
+                    <span className="about-info-value">Adelaide, Australia</span>
                   </div>
                 </div>
                 
-                <div className="kojima-social">
+                <div className="about-social">
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                   <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
                 </div>
                 
-                <div className="kojima-signature">
+                <div className="about-signature">
                   <h3>SILIN LI</h3>
                 </div>
               </div>
@@ -146,27 +146,27 @@ const About = () => {
       </section>
       
       {/* Timeline Section */}
-      <section className="timeline-section">
-        <div className="timeline-container">
-          <div className="timeline-header">
-            <h2 className="section-title">JOURNEY</h2>
-            <div className="section-line"></div>
+      <section className="about-timeline-section">
+        <div className="about-timeline-container">
+          <div className="about-timeline-header">
+            <h2 className="about-section-title">JOURNEY</h2>
+            <div className="about-section-line"></div>
           </div>
           
-          <div className="timeline">
+          <div className="about-timeline">
             {timelineData.map((item, index) => (
               <div 
-                className={`timeline-item ${scrollPosition > 800 + (index * 100) ? 'visible' : ''}`} 
+                className={`about-timeline-item ${scrollPosition > 800 + (index * 100) ? 'visible' : ''}`} 
                 key={index}
               >
-                <div className="timeline-year">{item.year}</div>
-                <div className="timeline-connector">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-line"></div>
+                <div className="about-timeline-year">{item.year}</div>
+                <div className="about-timeline-connector">
+                  <div className="about-timeline-dot"></div>
+                  <div className="about-timeline-line"></div>
                 </div>
-                <div className="timeline-content">
-                  <h3 className="timeline-title">{item.title}</h3>
-                  <p className="timeline-description">{item.description}</p>
+                <div className="about-timeline-content">
+                  <h3 className="about-timeline-title">{item.title}</h3>
+                  <p className="about-timeline-description">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -174,25 +174,25 @@ const About = () => {
         </div>
       </section>
       
-      {/* Skills Section */}
-      <section className="skills-section">
-        <div className="skills-container">
-          <div className="skills-header">
-            <h2 className="section-title">EXPERTISE</h2>
-            <div className="section-line"></div>
+      {/* Skills Section - using about- prefix to avoid conflicts */}
+      <section className="about-skills-section">
+        <div className="about-skills-container">
+          <div className="about-skills-header">
+            <h2 className="about-section-title">EXPERTISE</h2>
+            <div className="about-section-line"></div>
           </div>
           
-          <div className="skills-grid">
+          <div className="about-skills-grid">
             {skillsData.map((skill, index) => (
               <div 
-                className={`skill-card ${scrollPosition > 1200 + (index * 100) ? 'visible' : ''}`} 
+                className={`about-skill-card ${scrollPosition > 1200 + (index * 100) ? 'visible' : ''}`} 
                 key={index}
               >
-                <h3 className="skill-title">{skill.category}</h3>
-                <p className="skill-description">{skill.description}</p>
-                <ul className="skill-list">
+                <h3 className="about-skill-title">{skill.category}</h3>
+                <p className="about-skill-description">{skill.description}</p>
+                <ul className="about-skill-list">
                   {skill.skills.map((item, i) => (
-                    <li key={i} className="skill-item">{item}</li>
+                    <li key={i} className="about-skill-item">{item}</li>
                   ))}
                 </ul>
               </div>

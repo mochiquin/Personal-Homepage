@@ -3,30 +3,15 @@
 /* Font imports */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* Container */
-.kojima-container {
+/* About page container */
+.about-page {
   width: 100%;
   min-height: 100vh;
   background-color: #000;
 }
 
 /* Section titles and lines (shared) */
-.section-title {
+.about-section-title {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -34,14 +19,14 @@ body {
   margin-bottom: 15px;
 }
 
-.section-line {
+.about-section-line {
   width: 60px;
   height: 3px;
   background-color: #fff;
 }
 
 /* Hero Section */
-.hero-section {
+.about-hero-section {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -51,7 +36,7 @@ body {
   overflow: hidden;
 }
 
-.hero-bg {
+.about-hero-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -62,17 +47,16 @@ body {
   z-index: 0;
 }
 
-.hero-overlay {
+.about-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  
   z-index: 1;
 }
 
-.hero-content {
+.about-hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
@@ -84,11 +68,11 @@ body {
   height: 100%;
 }
 
-.hero-title-container {
+.about-hero-title-container {
   margin-bottom: 100px;
 }
 
-.hero-title {
+.about-hero-title {
   font-size: 9vw;
   font-weight: 800;
   letter-spacing: -2px;
@@ -98,7 +82,7 @@ body {
   text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
-.hero-subtitle {
+.about-hero-subtitle {
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 5px;
@@ -106,7 +90,7 @@ body {
   margin-top: 20px;
 }
 
-.scroll-prompt {
+.about-scroll-prompt {
   position: absolute;
   bottom: 50px;
   left: 50%;
@@ -117,42 +101,47 @@ body {
   font-size: 0.8rem;
   color: #aaa;
   letter-spacing: 2px;
-  animation: fadeInOut 2s infinite;
+  animation: about-fadeInOut 2s infinite;
 }
 
-.scroll-arrow {
+.about-scroll-arrow {
   width: 20px;
   height: 20px;
   border-right: 2px solid #fff;
   border-bottom: 2px solid #fff;
   transform: rotate(45deg);
   margin-top: 10px;
-  animation: bounce 2s infinite;
+  animation: about-bounce 2s infinite;
 }
 
-@keyframes fadeInOut {
+@keyframes about-fadeInOut {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
 
-@keyframes bounce {
+@keyframes about-bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
   40% { transform: translateY(-10px) rotate(45deg); }
   60% { transform: translateY(-5px) rotate(45deg); }
 }
 
 /* About Section */
-.about-section {
+.about-info-section {
   position: relative;
 }
 
-/* Kojima Inspired About Section Styles */
-.kojima-container .about-header-container {
+.about-header-container {
   padding: 80px 0 40px;
   background-color: #000;
 }
 
-.kojima-container .about-header-title {
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-header-title {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -161,7 +150,7 @@ body {
   padding-left: 50px;
 }
 
-.kojima-container .about-header-line {
+.about-header-line {
   width: 60px;
   height: 3px;
   background-color: #fff;
@@ -169,7 +158,7 @@ body {
   margin-left: 50px;
 }
 
-.kojima-container .kojima-about-background {
+.about-background {
   position: relative;
   min-height: 600px;
   background-color: #000;
@@ -186,7 +175,7 @@ body {
   );
 }
 
-.kojima-container .kojima-about-background::before {
+.about-background::before {
   content: '';
   position: absolute;
   top: 0;
@@ -203,7 +192,7 @@ body {
   box-shadow: 0 0 50px 50px rgba(0,0,0,0.5) inset;
 }
 
-.kojima-container .kojima-about-container {
+.about-content-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -211,21 +200,21 @@ body {
   z-index: 1;
 }
 
-.kojima-container .kojima-about-content {
+.about-content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
 /* Vertical text section */
-.kojima-container .kojima-vertical-text {
+.about-vertical-text {
   width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.kojima-container .kojima-text-line {
+.about-text-line {
   font-size: 1.1rem;
   line-height: 1.7;
   color: #fff;
@@ -235,12 +224,12 @@ body {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.kojima-container .kojima-text-line:hover {
+.about-text-line:hover {
   transform: translateX(5px);
   color: #ccc;
 }
 
-.kojima-container .kojima-text-line::before {
+.about-text-line::before {
   content: '';
   position: absolute;
   left: 0;
@@ -251,14 +240,14 @@ body {
 }
 
 /* Profile section */
-.kojima-container .kojima-profile-section {
+.about-profile-section {
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
-.kojima-container .kojima-profile-image {
+.about-profile-image {
   width: 200px;
   height: 200px;
   overflow: hidden;
@@ -266,7 +255,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.kojima-container .kojima-profile-image img {
+.about-profile-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -274,20 +263,20 @@ body {
   transition: filter 0.5s ease;
 }
 
-.kojima-container .kojima-profile-image img:hover {
+.about-profile-image img:hover {
   filter: grayscale(0%);
 }
 
-.kojima-container .kojima-contact-info {
+.about-contact-info {
   text-align: right;
   margin-bottom: 30px;
 }
 
-.kojima-container .kojima-info-item {
+.about-info-item {
   margin-bottom: 15px;
 }
 
-.kojima-container .kojima-info-label {
+.about-info-label {
   display: block;
   font-size: 0.85rem;
   color: #888;
@@ -295,21 +284,21 @@ body {
   margin-bottom: 5px;
 }
 
-.kojima-container .kojima-info-value {
+.about-info-value {
   display: block;
   font-size: 1rem;
   color: #fff;
   font-weight: 500;
 }
 
-.kojima-container .kojima-social {
+.about-social {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-bottom: 30px;
 }
 
-.kojima-container .kojima-social a {
+.about-social a {
   color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
@@ -318,7 +307,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.kojima-container .kojima-social a::after {
+.about-social a::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -329,20 +318,20 @@ body {
   transition: width 0.3s ease;
 }
 
-.kojima-container .kojima-social a:hover {
+.about-social a:hover {
   color: #ccc;
 }
 
-.kojima-container .kojima-social a:hover::after {
+.about-social a:hover::after {
   width: 100%;
   left: 0;
 }
 
-.kojima-container .kojima-signature {
+.about-signature {
   margin-top: 20px;
 }
 
-.kojima-container .kojima-signature h3 {
+.about-signature h3 {
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
@@ -350,28 +339,28 @@ body {
 }
 
 /* Timeline Section */
-.timeline-section {
+.about-timeline-section {
   padding: 120px 0;
   background-color: #000;
   position: relative;
 }
 
-.timeline-container {
+.about-timeline-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.timeline-header {
+.about-timeline-header {
   margin-bottom: 70px;
 }
 
-.timeline {
+.about-timeline {
   position: relative;
   padding-left: 60px;
 }
 
-.timeline-item {
+.about-timeline-item {
   display: grid;
   grid-template-columns: 80px 1px auto;
   grid-gap: 30px;
@@ -382,12 +371,12 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.timeline-item.visible {
+.about-timeline-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.timeline-year {
+.about-timeline-year {
   font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
@@ -395,7 +384,7 @@ body {
   line-height: 1;
 }
 
-.timeline-connector {
+.about-timeline-connector {
   position: relative;
   grid-column: 2;
   display: flex;
@@ -403,7 +392,7 @@ body {
   align-items: center;
 }
 
-.timeline-dot {
+.about-timeline-dot {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -411,7 +400,7 @@ body {
   margin-top: 10px;
 }
 
-.timeline-line {
+.about-timeline-line {
   width: 1px;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.2);
@@ -420,48 +409,48 @@ body {
   bottom: 0;
 }
 
-.timeline-content {
+.about-timeline-content {
   grid-column: 3;
   padding-bottom: 30px;
 }
 
-.timeline-title {
+.about-timeline-title {
   font-size: 1.3rem;
   font-weight: 600;
   color: #fff;
   margin-bottom: 10px;
 }
 
-.timeline-description {
+.about-timeline-description {
   font-size: 1rem;
   color: #aaa;
   line-height: 1.6;
 }
 
 /* Skills Section */
-.skills-section {
+.about-skills-section {
   padding: 120px 0;
   background-color: #000;
   position: relative;
 }
 
-.skills-container {
+.about-skills-container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.skills-header {
+.about-skills-header {
   margin-bottom: 80px;
 }
 
-.skills-grid {
+.about-skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 40px;
 }
 
-.skill-card {
+.about-skill-card {
   background-color: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -471,17 +460,17 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease, background-color 0.3s ease;
 }
 
-.skill-card.visible {
+.about-skill-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.skill-card:hover {
+.about-skill-card:hover {
   background-color: rgba(255, 255, 255, 0.08);
   transform: translateY(-5px);
 }
 
-.skill-title {
+.about-skill-title {
   font-size: 1.3rem;
   font-weight: 600;
   color: #fff;
@@ -490,7 +479,7 @@ body {
   padding-bottom: 15px;
 }
 
-.skill-title::after {
+.about-skill-title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -500,18 +489,18 @@ body {
   background-color: #fff;
 }
 
-.skill-description {
+.about-skill-description {
   font-size: 0.95rem;
   color: #aaa;
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
-.skill-list {
+.about-skill-list {
   list-style: none;
 }
 
-.skill-item {
+.about-skill-item {
   font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 8px;
@@ -519,121 +508,85 @@ body {
   padding-left: 15px;
 }
 
-.skill-item::before {
+.about-skill-item::before {
   content: '–';
   position: absolute;
   left: 0;
   color: #666;
 }
 
-/* Responsive adjustments for Kojima style */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .kojima-container .kojima-about-content {
+  .about-content {
     flex-direction: column;
   }
   
-  .kojima-container .kojima-vertical-text,
-  .kojima-container .kojima-profile-section {
+  .about-vertical-text,
+  .about-profile-section {
     width: 100%;
   }
   
-  .kojima-container .kojima-profile-section {
+  .about-profile-section {
     margin-top: 50px;
     align-items: flex-start;
   }
   
-  .kojima-container .kojima-contact-info {
+  .about-contact-info {
     text-align: left;
   }
   
-  .kojima-container .kojima-social {
+  .about-social {
     align-items: flex-start;
   }
   
-  .timeline {
+  .about-timeline {
     padding-left: 0;
   }
   
-  .timeline-item {
+  .about-timeline-item {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
   
-  .timeline-connector {
+  .about-timeline-connector {
     display: none;
   }
 }
 
-/* Footer */
-.footer {
-  padding: 60px 0;
-  background-color: #111;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.footer-copyright {
-  font-size: 0.8rem;
-  color: #666;
-}
-
 /* Additional responsive adjustments */
 @media (max-width: 1024px) {
-  .hero-title {
+  .about-hero-title {
     font-size: 10vw;
   }
   
-  .hero-subtitle {
+  .about-hero-subtitle {
     font-size: 1.2rem;
   }
   
-  .section-title,
-  .section-title-dark, 
+  .about-section-title,
   .about-header-title,
-  .timeline-title,
-  .skill-title {
+  .about-timeline-title,
+  .about-skill-title {
     font-size: 2.2rem;
   }
   
-  .about-paragraph,
-  .timeline-description,
-  .skill-description {
+  .about-timeline-description,
+  .about-skill-description {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-title {
+  .about-hero-title {
     font-size: 12vw;
   }
   
-  .hero-subtitle {
+  .about-hero-subtitle {
     font-size: 1rem;
     letter-spacing: 3px;
   }
   
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-  
-  .section-title,
-  .section-title-dark, 
+  .about-section-title,
   .about-header-title {
     font-size: 1.8rem;
   }
