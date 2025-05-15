@@ -3,28 +3,28 @@ import { useState } from 'react';
 import '../styles/Contact.css';
 
 const Contact = () => {
-  // 表单状态
+  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  
+
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
-  
-  // 处理输入变化
+
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-    
-    // 清除对应字段的错误
+
+    // Clear error for the field being changed
     if (formErrors[name]) {
       setFormErrors(prev => ({
         ...prev,
@@ -32,49 +32,49 @@ const Contact = () => {
       }));
     }
   };
-  
-  // 验证表单
+
+  // Validate form
   const validateForm = () => {
     const errors = {};
-    
+
     if (!formData.name.trim()) {
-      errors.name = '请输入您的姓名';
+      errors.name = 'Please enter your name';
     }
-    
+
     if (!formData.email.trim()) {
-      errors.email = '请输入您的邮箱';
+      errors.email = 'Please enter your email';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = '请输入有效的邮箱地址';
+      errors.email = 'Please enter a valid email address';
     }
-    
+
     if (!formData.subject.trim()) {
-      errors.subject = '请输入主题';
+      errors.subject = 'Please enter a subject';
     }
-    
+
     if (!formData.message.trim()) {
-      errors.message = '请输入消息内容';
+      errors.message = 'Please enter your message';
     }
-    
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
-  
-  // 处理表单提交
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
       setSubmitError(false);
-      
+
       try {
-        // 这里可以添加实际的表单提交逻辑
-        // 例如使用fetch或axios向后端API发送数据
-        console.log('发送表单数据:', formData);
-        
-        // 模拟API请求
+        // Here you can add your actual form submission logic
+        // For example, using fetch or axios to send data to a backend API
+        console.log('Sending form data:', formData);
+
+        // Simulate API request
         await new Promise(resolve => setTimeout(resolve, 1500));
-        
+
         setSubmitSuccess(true);
         setFormData({
           name: '',
@@ -83,15 +83,15 @@ const Contact = () => {
           message: ''
         });
       } catch (error) {
-        console.error('表单提交错误:', error);
+        console.error('Form submission error:', error);
         setSubmitError(true);
       } finally {
         setIsSubmitting(false);
       }
     }
   };
-  
-  // 重置表单状态
+
+  // Reset form state
   const resetForm = () => {
     setSubmitSuccess(false);
     setSubmitError(false);
@@ -99,58 +99,58 @@ const Contact = () => {
 
   return (
     <div className="contact">
-      {/* 页面标题 */}
-      <section className="contact-header">
-        <div className="contact-header-content">
-          <h1 className="heading-xl">联系我</h1>
-          <p>让我们一起合作，创造精彩</p>
-        </div>
-      </section>
+      <div className="contact-container">
+        {/* Page header */}
+        <section className="contact-header">
+          <div className="contact-header-content">
+            <h1 className="heading-xl">Contact Me</h1>
+            <p>Let's collaborate and create something amazing together</p>
+          </div>
+        </section>
 
-      {/* 联系信息和表单 */}
-      <section className="contact-main section">
-        <div className="container">
-          <div className="contact-container">
+        {/* Contact information and form */}
+        <section className="contact-main">
+          <div className="contact-content">
             <div className="contact-info">
-              <h2>联系方式</h2>
+              <h2>Contact Information</h2>
               <p className="info-description">
-                如果您有任何问题或项目需求，请随时与我联系。我会尽快回复您的消息。
+                If you have any questions or project inquiries, feel free to contact me. I'll get back to you as soon as possible.
               </p>
-              
+
               <div className="info-items">
                 <div className="info-item">
                   <div className="info-icon">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div className="info-content">
-                    <h3>邮箱</h3>
+                    <h3>Email</h3>
                     <p>your.email@example.com</p>
                   </div>
                 </div>
-                
+
                 <div className="info-item">
                   <div className="info-icon">
                     <i className="fas fa-phone-alt"></i>
                   </div>
                   <div className="info-content">
-                    <h3>电话</h3>
+                    <h3>Phone</h3>
                     <p>+86 123 4567 8900</p>
                   </div>
                 </div>
-                
+
                 <div className="info-item">
                   <div className="info-icon">
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div className="info-content">
-                    <h3>地址</h3>
-                    <p>中国，城市，地址</p>
+                    <h3>Location</h3>
+                    <p>China, City, Address</p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="social-links">
-                <h3>社交媒体</h3>
+                <h3>Social Media</h3>
                 <div className="social-icons">
                   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-github"></i>
@@ -167,26 +167,26 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="contact-form-container">
-              <h2>发送消息</h2>
-              
+              <h2>Send Message</h2>
+
               {submitSuccess ? (
                 <div className="form-success">
                   <div className="success-icon">
                     <i className="fas fa-check-circle"></i>
                   </div>
-                  <h3>消息已发送!</h3>
-                  <p>感谢您的留言。我会尽快与您联系。</p>
+                  <h3>Message Sent!</h3>
+                  <p>Thank you for your message. I'll contact you shortly.</p>
                   <button className="btn btn-accent" onClick={resetForm}>
-                    发送新消息
+                    Send New Message
                   </button>
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="form-grid">
                     <div className="form-group">
-                      <label htmlFor="name">姓名</label>
+                      <label htmlFor="name">Name</label>
                       <input
                         type="text"
                         id="name"
@@ -197,9 +197,9 @@ const Contact = () => {
                       />
                       {formErrors.name && <span className="error-message">{formErrors.name}</span>}
                     </div>
-                    
+
                     <div className="form-group">
-                      <label htmlFor="email">邮箱</label>
+                      <label htmlFor="email">Email</label>
                       <input
                         type="email"
                         id="email"
@@ -211,9 +211,9 @@ const Contact = () => {
                       {formErrors.email && <span className="error-message">{formErrors.email}</span>}
                     </div>
                   </div>
-                  
+
                   <div className="form-group">
-                    <label htmlFor="subject">主题</label>
+                    <label htmlFor="subject">Subject</label>
                     <input
                       type="text"
                       id="subject"
@@ -224,9 +224,9 @@ const Contact = () => {
                     />
                     {formErrors.subject && <span className="error-message">{formErrors.subject}</span>}
                   </div>
-                  
+
                   <div className="form-group">
-                    <label htmlFor="message">消息</label>
+                    <label htmlFor="message">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -237,64 +237,60 @@ const Contact = () => {
                     ></textarea>
                     {formErrors.message && <span className="error-message">{formErrors.message}</span>}
                   </div>
-                  
+
                   {submitError && (
                     <div className="form-error">
-                      <p>发送消息时出现错误。请稍后再试。</p>
+                      <p>An error occurred while sending your message. Please try again later.</p>
                     </div>
                   )}
-                  
-                  <button 
-                    type="submit" 
-                    className="btn btn-accent" 
+
+                  <button
+                    type="submit"
+                    className="btn btn-accent"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <>
-                        <i className="fas fa-spinner fa-spin"></i> 发送中...
+                        <i className="fas fa-spinner fa-spin"></i> Sending...
                       </>
-                    ) : '发送消息'}
+                    ) : 'Send Message'}
                   </button>
                 </form>
               )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 常见问题 */}
-      <section className="faq-section section">
-        <div className="container">
+        {/* FAQ section */}
+        <section className="faq-section">
           <div className="section-header">
-            <h2 className="heading-lg">常见问题</h2>
-            <p>以下是一些客户经常问的问题</p>
+            <h2 className="heading-lg">Frequently Asked Questions</h2>
+            <p>Here are some common questions clients ask</p>
           </div>
-          
+
           <div className="faq-grid">
             <div className="faq-item">
-              <h3>您如何计费？</h3>
-              <p>我的收费通常按项目基础计算，具体取决于项目复杂程度、所需时间和功能需求。我也提供小时计费方式用于维护和小型修改。</p>
+              <h3>How do you charge for your services?</h3>
+              <p>My fees are typically project-based, depending on the complexity, time requirements, and features needed. I also offer hourly rates for maintenance and minor modifications.</p>
             </div>
-            
+
             <div className="faq-item">
-              <h3>项目开发周期有多长？</h3>
-              <p>项目周期因复杂度而异。一个简单的网站通常需要2-4周，而功能复杂的网站或应用可能需要2-3个月。我会在项目开始前提供明确的时间表。</p>
+              <h3>How long does a project take to complete?</h3>
+              <p>Project timelines vary based on complexity. A simple website typically takes 2-4 weeks, while a complex website or application might require 2-3 months. I'll provide a clear timeline before starting your project.</p>
             </div>
-            
+
             <div className="faq-item">
-              <h3>您是否提供网站维护服务？</h3>
-              <p>是的，我提供网站维护服务，包括内容更新、功能添加、安全更新和性能优化等。可以根据您的需求制定定期维护计划。</p>
+              <h3>Do you offer website maintenance services?</h3>
+              <p>Yes, I offer website maintenance services including content updates, feature additions, security updates, and performance optimizations. We can set up a regular maintenance plan based on your needs.</p>
             </div>
-            
+
             <div className="faq-item">
-              <h3>合作流程是怎样的？</h3>
-              <p>我的合作流程包括：初步沟通和需求分析、提案和报价、设计阶段、开发实现、测试和反馈、最终交付和后续支持。每个阶段都会与您保持密切沟通。</p>
+              <h3>What is your project workflow like?</h3>
+              <p>My workflow includes: initial consultation and requirement analysis, proposal and quote, design phase, development implementation, testing and feedback, final delivery, and ongoing support. I maintain close communication throughout each phase.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-    
+        </section>
+      </div>
     </div>
   );
 };

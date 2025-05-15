@@ -9,24 +9,24 @@ import DynamicCircle from '../components/DynamicCircle';
 const PortfolioHome = () => {
   const portfolioHeroRef = useRef(null);
   const portfolioTextRef = useRef(null);
-  
+
   useEffect(() => {
     const handlePortfolioMouseMove = (event) => {
       if (!portfolioHeroRef.current || !portfolioTextRef.current) return;
-      
+
       const { clientX, clientY } = event;
       const { innerWidth, innerHeight } = window;
-      
+
       // Calculate mouse position relative to window center
       const portfolioMoveX = (clientX - innerWidth / 2) / (innerWidth / 2) * -15;
       const portfolioMoveY = (clientY - innerHeight / 2) / (innerHeight / 2) * -15;
-      
+
       // Apply parallax effect
       portfolioTextRef.current.style.transform = `translate(${portfolioMoveX}px, ${portfolioMoveY}px)`;
     };
-    
+
     document.addEventListener('mousemove', handlePortfolioMouseMove);
-    
+
     return () => {
       document.removeEventListener('mousemove', handlePortfolioMouseMove);
     };
@@ -43,11 +43,11 @@ const PortfolioHome = () => {
               <span>Design</span>
               <span>Develop</span>
             </h1>
-            
+
             <p className="portfolio-hero-subheading">
               Futuristic × Stylish × Avant-garde Design
             </p>
-            
+
             <div className="portfolio-hero-cta">
               <Link to="/projects" className="portfolio-btn">View Projects</Link>
               <Link to="/contact" className="portfolio-btn portfolio-btn-accent">Contact Me</Link>
@@ -70,16 +70,16 @@ const PortfolioHome = () => {
               <h2 className="heading-lg" data-text="ABOUT">Digital Artist & Designer</h2>
               <div className="portfolio-line"></div>
             </div>
-            
+
             <div className="portfolio-intro-text">
               <p>
                 Blending artistic vision with technical expertise to create captivating digital illustrations.
               </p>
-              
+
               <p>
                 I specialize in realistic-style artwork and interactive digital experiences with a focus on detail and atmosphere.
               </p>
-              
+
               <Link to="/about" className="portfolio-text-link">Learn More <span>→</span></Link>
             </div>
           </div>
@@ -94,7 +94,7 @@ const PortfolioHome = () => {
             <p>Explore my artistic journey and illustration portfolio</p>
             <br />
           </div>
-          
+
           <div className="portfolio-projects-grid">
             <div className="portfolio-project-card portfolio-featured">
               <div className="portfolio-project-image">
@@ -113,7 +113,7 @@ const PortfolioHome = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="portfolio-project-card">
               <div className="portfolio-project-image">
                 <img src="/assets/3.jpg" alt="Realistic Portrait Illustration" />
@@ -131,7 +131,7 @@ const PortfolioHome = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="portfolio-project-card">
               <div className="portfolio-project-image">
                 <img src="/assets/1.jpg" alt="Realistic Environment Illustration" />
@@ -150,7 +150,7 @@ const PortfolioHome = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="portfolio-section-footer">
             <br />
             <Link to="/projects" className="portfolio-btn portfolio-btn-accent">View All Projects</Link>
@@ -167,7 +167,7 @@ const PortfolioHome = () => {
               <p>Bringing artistic visions to life requires both creative talent and technical proficiency. These are the tools and techniques I've mastered.</p>
               <Link to="/skills" className="portfolio-btn">Explore My Skills</Link>
             </div>
-            
+
             <div className="portfolio-skills-showcase">
               <div className="portfolio-skill-category">
                 <h3>Digital Illustration</h3>
@@ -179,7 +179,7 @@ const PortfolioHome = () => {
                   <span className="portfolio-skill-tag">Digital Painting</span>
                 </div>
               </div>
-              
+
               <div className="portfolio-skill-category">
                 <h3>3D & Visual Design</h3>
                 <div className="portfolio-skill-tags">
@@ -190,7 +190,7 @@ const PortfolioHome = () => {
                   <span className="portfolio-skill-tag">Texture Creation</span>
                 </div>
               </div>
-              
+
               <div className="portfolio-skill-category">
                 <h3>Web & Interactive</h3>
                 <div className="portfolio-skill-tags">
