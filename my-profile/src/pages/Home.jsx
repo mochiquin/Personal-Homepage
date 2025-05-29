@@ -45,7 +45,7 @@ const PortfolioHome = () => {
             </h1>
 
             <p className="portfolio-hero-subheading">
-              Futuristic × Stylish × Avant-garde Design
+              Classic × Fashion × Futuristic Design
             </p>
 
             <div className="portfolio-hero-cta">

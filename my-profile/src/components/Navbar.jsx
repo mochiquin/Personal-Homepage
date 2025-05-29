@@ -37,7 +37,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isHome && !scrolled ? 'on-hero' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span>YOUR</span>NAME
+          <span>Silin</span>Li
         </Link>
 
         <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>

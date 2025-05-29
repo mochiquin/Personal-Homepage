@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/Projects.css';
+import profileImage from '../assets/profilepage.png';
 
 const Projects = () => {
   // Project data
@@ -7,32 +8,41 @@ const Projects = () => {
     {
       id: 1,
       title: "Personal Portfolio Website",
-      description: "A responsive portfolio website built with React to showcase my projects and skills. Features include dark/light mode, smooth animations, and a contact form.",
+      description: "A responsive portfolio website built with React to showcase my projects and skills. Features include , smooth animations, and a contact form.",
       technologies: ["React", "JavaScript", "CSS", "HTML"],
-      codeUrl: "https://github.com/yourusername/portfolio-website",
+      codeUrl: "https://github.com/mochiquin/mainpageofself",
       demoUrl: "https://yourwebsite.com",
-      image: "/images/portfolio-project.jpg"
+      image: "profilePageImage"
     },
     {
       id: 2,
       title: "Atomic Heart Illustrations",
       description: "A collection of digital illustrations inspired by the Atomic Heart game. Created using professional design tools with attention to detail and art direction.",
       technologies: ["Photoshop", "Illustrator", "Digital Art"],
-      codeUrl: "https://github.com/yourusername/atomic-heart-illustrations",
-      demoUrl: "https://behance.net/yourusername/atomic-heart",
+      codeUrl: "https://www.artstation.com/artwork/QXeAb4",
+      demoUrl: "https://www.artstation.com/artwork/QXeAb4",
       image: "/images/atomic-heart-illustrations.jpg"
     },
     {
       id: 3,
-      title: "E-commerce Dashboard",
-      description: "An admin dashboard for e-commerce businesses with sales analytics, inventory management, and customer insights using modern web technologies.",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
+      title: "Koloa be where",
+      description: "A web application for citizens to upload the images of koloa and use ai models to identify it, and provide information about the species.",
+      technologies: ["Yolo11", "React", "a", "Express"],
       codeUrl: "https://github.com/yourusername/ecommerce-dashboard",
       demoUrl: "https://dashboard-demo.yourwebsite.com",
       image: "/images/dashboard-project.jpg"
     },
     {
       id: 4,
+      title: "Mobile Weather App",
+      description: "A sleek weather application for iOS and Android that provides real-time forecasts, radar maps, and weather alerts with a beautiful UI.",
+      technologies: ["React Native", "JavaScript", "API Integration"],
+      codeUrl: "https://github.com/yourusername/weather-app",
+      demoUrl: "https://weatherapp.yourwebsite.com",
+      image: "/images/weather-app.jpg"
+    },
+    {
+      id: 5,
       title: "Mobile Weather App",
       description: "A sleek weather application for iOS and Android that provides real-time forecasts, radar maps, and weather alerts with a beautiful UI.",
       technologies: ["React Native", "JavaScript", "API Integration"],
