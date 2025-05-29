@@ -61,7 +61,7 @@
   color: var(--portfolio-accent-color);
 }
 
-/* Hero section */
+/* Hero section - 改进的响应式设计 */
 .portfolio-hero {
   position: relative;
   height: 100vh;
@@ -71,7 +71,7 @@
   justify-content: center;
   overflow: hidden;
   background-size: cover;
-  background-position: 5% center;
+  background-position: center;
   border-bottom: var(--grid-border);
 }
 
@@ -104,21 +104,27 @@
   z-index: 1;
   position: relative;
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
 }
 
 .portfolio-hero-text {
-  max-width: 800px;
+  max-width: min(800px, 90%);
   transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  flex: 1;
 }
 
+/* 改进的标题响应式设计 */
 .portfolio-hero-heading {
-  font-size: clamp(3rem, 10vw, 8rem);
+  font-size: clamp(2.5rem, 8vw, 8rem);
   font-weight: 800;
-  line-height: 1;
-  margin-bottom: 1.5rem;
+  line-height: 0.9;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
+  gap: clamp(0.2rem, 1vw, 0.5rem);
 }
 
 .portfolio-hero-heading span {
@@ -131,14 +137,14 @@
   animation-delay: 0.3s;
   color: #ffffff;
   font-family: "Orbitron", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: clamp(1px, 0.3vw, 2px);
 }
 
 .portfolio-hero-heading span:nth-child(2) {
   animation-delay: 0.6s;
   color: #ffffff;
   font-family: "Rajdhani", sans-serif;
-  margin-left: 3rem;
+  margin-left: clamp(1rem, 4vw, 3rem);
   font-weight: 600;
 }
 
@@ -146,7 +152,7 @@
   animation-delay: 0.9s;
   color: #ffffff;
   font-family: "Syncopate", sans-serif;
-  margin-left: 6rem;
+  margin-left: clamp(2rem, 8vw, 6rem);
 }
 
 .portfolio-hero-heading span:hover {
@@ -156,28 +162,30 @@
 }
 
 .portfolio-hero-subheading {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   opacity: 0;
   animation: fadeIn 0.8s forwards;
   animation-delay: 1.2s;
+  line-height: 1.4;
 }
 
 .portfolio-hero-cta {
-  margin-top: 2rem;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
   display: flex;
   gap: 1rem;
   opacity: 0;
   animation: fadeIn 0.8s forwards;
   animation-delay: 1.5s;
+  flex-wrap: wrap;
 }
 
 .portfolio-hero-circle {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: clamp(200px, 25vw, 400px);
+  height: clamp(200px, 25vw, 400px);
   top: 50%;
-  right: 10%;
+  right: clamp(5%, 10vw, 10%);
   transform: translateY(-50%);
   z-index: 1;
   animation: none;
@@ -194,8 +202,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: clamp(10px, 1.5vw, 15px);
+  height: clamp(10px, 1.5vw, 15px);
   background-color: var(--portfolio-accent-color, #ffffff);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -205,8 +213,8 @@
 .portfolio-hero-circle::before {
   content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: clamp(6px, 1vw, 8px);
+  height: clamp(6px, 1vw, 8px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   top: 0;
@@ -230,15 +238,15 @@
 }
 
 .portfolio-scroll-indicator span {
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
 .portfolio-scroll-arrow {
-  width: 30px;
-  height: 50px;
+  width: clamp(20px, 5vw, 30px);
+  height: clamp(35px, 8vw, 50px);
   border: 2px solid var(--portfolio-text-color);
   border-radius: 15px;
   position: relative;
@@ -247,8 +255,8 @@
 .portfolio-scroll-arrow::before {
   content: "";
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: clamp(4px, 1vw, 6px);
+  height: clamp(4px, 1vw, 6px);
   background-color: var(--portfolio-text-color);
   border-radius: 50%;
   top: 10px;
@@ -265,12 +273,12 @@
   position: relative;
 }
 
-/* Add vertical guide lines */
+/* Add vertical guide lines - 响应式调整 */
 .portfolio-home .portfolio-section::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 120px;
+  left: clamp(60px, 12vw, 120px);
   height: 100%;
   width: 1px;
   background-color: var(--portfolio-border-color);
@@ -284,7 +292,7 @@
   position: relative;
 }
 
-/* Intro section */
+/* Intro section - 改进响应式 */
 .portfolio-intro {
   background-color: var(--portfolio-primary-color);
 }
@@ -294,45 +302,45 @@
   grid-template-columns: 1fr 1fr;
   gap: 0;
   align-items: stretch;
-  min-height: 60vh;
+  min-height: clamp(50vh, 70vh, 60vh);
 }
 
 .portfolio-intro-title {
   position: relative;
-  padding: 4rem 4rem 4rem 160px; /* Add left margin for vertical line */
+  padding: clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(80px, 15vw, 160px);
   border-right: var(--grid-border);
 }
 
 .portfolio-intro-title h2 {
   position: relative;
-  margin-bottom: 2rem;
-  font-size: 5rem; /* Larger font */
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   letter-spacing: -1px;
   line-height: 1.1;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-/* Add title numbering */
+/* Add title numbering - 响应式调整 */
 .portfolio-intro-title h2::before {
   content: "01";
   position: absolute;
-  left: -40px;
+  left: clamp(-30px, -5vw, -40px);
   top: 0;
-  font-size: 1rem;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   font-weight: 500;
   color: var(--portfolio-text-secondary);
 }
 
 .portfolio-line {
-  width: 50px;
-  height: 4px;
+  width: clamp(30px, 8vw, 50px);
+  height: clamp(3px, 0.5vw, 4px);
   background-color: var(--portfolio-accent-color);
   margin-top: 1rem;
 }
 
 .portfolio-intro-text {
-  padding: 4rem 4rem 4rem 3rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -340,19 +348,19 @@
 }
 
 .portfolio-intro-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
   line-height: 1.7;
   max-width: 90%;
 }
 
-/* Add vertical number indicators */
+/* Add vertical number indicators - 响应式调整 */
 .portfolio-featured-projects::before {
   content: "02";
   position: absolute;
-  top: 4rem;
-  left: 120px;
-  font-size: 1rem;
+  top: clamp(2rem, 5vw, 4rem);
+  left: clamp(60px, 12vw, 120px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
@@ -361,9 +369,9 @@
 .portfolio-skills-overview::before {
   content: "03";
   position: absolute;
-  top: 4rem;
-  left: 120px;
-  font-size: 1rem;
+  top: clamp(2rem, 5vw, 4rem);
+  left: clamp(60px, 12vw, 120px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
@@ -372,9 +380,9 @@
 .portfolio-contact-cta::before {
   content: "04";
   position: absolute;
-  top: 4rem;
-  left: 120px;
-  font-size: 1rem;
+  top: clamp(2rem, 5vw, 4rem);
+  left: clamp(60px, 12vw, 120px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
   color: var(--portfolio-text-secondary);
   z-index: 5;
   transform: translateX(-50%);
@@ -383,7 +391,7 @@
 .portfolio-text-link {
   display: inline-block;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: var(--portfolio-accent-color);
   position: relative;
   margin-top: auto;
@@ -413,23 +421,24 @@
   transform: translateX(5px);
 }
 
-/* Projects section */
+/* Projects section - 改进响应式 */
 .portfolio-featured-projects {
   background-color: var(--portfolio-background-color);
 }
 
 .portfolio-section-header {
   text-align: left;
-  padding: 4rem 4rem 2rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
   border-bottom: var(--grid-border);
 }
 
 .portfolio-section-header h2 {
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .portfolio-section-header p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--portfolio-text-secondary);
 }
 
@@ -446,20 +455,19 @@
 
 .portfolio-home .portfolio-project-card {
   position: relative;
-  overflow: visible; /* Allow content overflow */
+  overflow: visible;
   transition: transform 0.3s ease;
-  min-height: 60vh; /* Increase minimum height */
+  min-height: clamp(40vh, 60vh, 60vh);
   border-right: var(--grid-border);
-  max-height: none; /* Remove maximum height restriction */
+  max-height: none;
 }
 
-/* Add project numbering position and style adjustments */
 .portfolio-home .portfolio-project-card:nth-child(1) .portfolio-project-meta::before,
 .portfolio-home .portfolio-project-card:nth-child(2) .portfolio-project-meta::before,
 .portfolio-home .portfolio-project-card:nth-child(3) .portfolio-project-meta::before {
-  top: -30px;
+  top: clamp(-25px, -4vw, -30px);
   left: 0;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
   font-weight: 500;
   opacity: 0.9;
   letter-spacing: 1px;
@@ -469,7 +477,7 @@
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; /* Image content doesn't overflow */
+  overflow: hidden;
 }
 
 .portfolio-project-image img,
@@ -487,7 +495,7 @@
   justify-content: center;
   color: var(--portfolio-accent-color);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .portfolio-project-card:hover .portfolio-project-image img {
@@ -504,7 +512,7 @@
   opacity: 0;
   display: flex;
   align-items: flex-end;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   transition: opacity 0.3s ease;
 }
 
@@ -517,10 +525,13 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .portfolio-project-title {
-  margin: 0; /* Remove title default margins */
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
 /* Add project numbering */
@@ -564,31 +575,27 @@
 
 .portfolio-project-category {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.8rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--portfolio-accent-color);
   margin-bottom: 0.5rem;
 }
 
-.portfolio-project-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .portfolio-project-description {
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
   color: var(--portfolio-text-secondary);
+  line-height: 1.5;
 }
 
 .portfolio-section-footer {
   display: flex;
   justify-content: center;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
-/* Skills section */
+/* Skills section - 改进响应式 */
 .portfolio-skills-overview {
   background-color: var(--portfolio-primary-color);
   position: relative;
@@ -598,11 +605,11 @@
 .portfolio-skills-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 60vh;
+  min-height: clamp(50vh, 70vh, 60vh);
 }
 
 .portfolio-skills-text {
-  padding: 4rem 4rem 4rem 160px; /* Add left margin for vertical line */
+  padding: clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 4rem) clamp(80px, 15vw, 160px);
   border-right: var(--grid-border);
   display: flex;
   flex-direction: column;
@@ -610,8 +617,8 @@
 }
 
 .portfolio-skills-text h2 {
-  margin-bottom: 1.5rem;
-  font-size: 4rem;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   letter-spacing: -1px;
   text-transform: uppercase;
@@ -619,8 +626,8 @@
 }
 
 .portfolio-skills-text p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   line-height: 1.7;
   max-width: 90%;
 }
@@ -650,28 +657,28 @@
 .portfolio-skills-showcase {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 4rem;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(2rem, 6vw, 4rem);
   justify-content: center;
 }
 
 .portfolio-skill-category h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
   color: var(--portfolio-accent-color);
 }
 
 .portfolio-skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: clamp(0.5rem, 1.2vw, 0.8rem);
 }
 
 .portfolio-skill-tag {
-  padding: 0.5rem 1rem;
+  padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   transition: all 0.3s ease;
 }
 
@@ -681,12 +688,12 @@
   transform: translateY(-3px);
 }
 
-/* Contact section */
+/* Contact section - 改进响应式 */
 .portfolio-contact-cta {
   background-color: var(--portfolio-background-color);
   position: relative;
   overflow: hidden;
-  min-height: 40vh;
+  min-height: clamp(30vh, 50vh, 40vh);
   display: flex;
   align-items: center;
 }
@@ -695,16 +702,17 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 4rem;
+  padding: clamp(2rem, 6vw, 4rem);
 }
 
 .portfolio-cta-content h2 {
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .portfolio-cta-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
   color: var(--portfolio-text-secondary);
 }
 
@@ -720,12 +728,12 @@
 
 .portfolio-decoration-circle {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(200px, 25vw, 300px);
   border: 2px solid rgba(255, 255, 255, 0.05);
   border-radius: 50%;
   top: 50%;
-  right: -150px;
+  right: clamp(-100px, -12.5vw, -150px);
   transform: translateY(-50%);
 }
 
@@ -785,16 +793,23 @@
   }
 }
 
-/* Responsive design */
+/* 改进的响应式设计 */
 @media screen and (max-width: 1200px) {
-  .portfolio-hero-circle {
-    width: 300px;
-    height: 300px;
-    right: -50px;
+  .portfolio-hero {
+    background-position: center;
+  }
+
+  .portfolio-hero-content {
+    padding: 1.5rem;
   }
 }
 
 @media screen and (max-width: 900px) {
+  /* 移除边框，改为单列布局 */
+  .portfolio-home .portfolio-section::before {
+    display: none;
+  }
+
   .portfolio-intro-content,
   .portfolio-skills-content {
     grid-template-columns: 1fr;
@@ -804,6 +819,14 @@
   .portfolio-skills-text {
     border-right: none;
     border-bottom: var(--grid-border);
+    padding-left: clamp(2rem, 6vw, 4rem);
+  }
+
+  .portfolio-intro-title h2::before,
+  .portfolio-featured-projects::before,
+  .portfolio-skills-overview::before,
+  .portfolio-contact-cta::before {
+    display: none;
   }
 
   .portfolio-projects-grid {
@@ -822,21 +845,53 @@
   .portfolio-project-card:last-child {
     border-bottom: none;
   }
+
+  /* 调整 hero 区域布局 */
+  .portfolio-hero-content {
+    align-items: flex-start;
+    padding-top: 15vh;
+  }
+
+  .portfolio-hero-text {
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
+  .portfolio-home::before {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .portfolio-hero-content {
+    padding: 1rem;
+    padding-top: 12vh;
+  }
+
   .portfolio-hero-heading {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-hero-heading span:nth-child(2) {
+    margin-left: 1rem;
+  }
+
+  .portfolio-hero-heading span:nth-child(3) {
+    margin-left: 2rem;
   }
 
   .portfolio-hero-cta {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .portfolio-hero-cta .portfolio-btn {
     width: 100%;
     text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
   }
 
   .portfolio-intro-title,
@@ -844,16 +899,227 @@
   .portfolio-skills-text,
   .portfolio-skills-showcase,
   .portfolio-section-header {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .portfolio-scroll-indicator {
+    bottom: 1.5rem;
   }
 }
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 480px) {
+  /* 超小屏幕优化 */
+  .portfolio-home {
+    border-left: none;
+    border-right: none;
+  }
+
+  .portfolio-hero {
+    height: 100svh; /* 使用安全视口高度 */
+  }
+
+  .portfolio-hero-content {
+    padding: 0.8rem;
+    padding-top: 10vh;
+    width: 100%;
+  }
+
+  .portfolio-hero-heading {
+    font-size: clamp(2rem, 12vw, 3rem);
+    line-height: 0.95;
+    gap: 0.1rem;
+  }
+
+  .portfolio-hero-heading span:nth-child(2) {
+    margin-left: 0.5rem;
+  }
+
+  .portfolio-hero-heading span:nth-child(3) {
+    margin-left: 1rem;
+  }
+
+  .portfolio-hero-subheading {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .portfolio-hero-cta .portfolio-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* 项目卡片移动端优化 */
+  .portfolio-project-overlay {
+    padding: 1rem;
+  }
+
   .portfolio-project-meta-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .portfolio-project-meta-header .portfolio-btn {
-    margin-top: 15px;
+    margin-top: 0;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+
+  .portfolio-project-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .portfolio-project-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  /* 技能标签移动端优化 */
+  .portfolio-skill-tags {
+    gap: 0.4rem;
+  }
+
+  .portfolio-skill-tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  /* 内容区域移动端优化 */
+  .portfolio-intro-content,
+  .portfolio-skills-content {
+    min-height: 50vh;
+  }
+
+  .portfolio-section-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .portfolio-intro-title,
+  .portfolio-intro-text,
+  .portfolio-skills-text,
+  .portfolio-skills-showcase {
+    padding: 1.5rem 1rem;
+  }
+
+  .portfolio-cta-content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* 极小屏幕优化 */
+  .portfolio-hero-content {
+    padding: 0.5rem;
+    padding-top: 8vh;
+  }
+
+  .portfolio-hero-heading {
+    font-size: clamp(1.8rem, 15vw, 2.5rem);
+  }
+
+  .portfolio-hero-subheading {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-intro-title h2,
+  .portfolio-skills-text h2,
+  .portfolio-cta-content h2 {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .portfolio-section-header h2 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+}
+
+/* 打印样式优化 */
+@media print {
+  .portfolio-home::before,
+  .portfolio-hero-circle,
+  .portfolio-scroll-indicator,
+  .portfolio-cta-decoration {
+    display: none;
+  }
+
+  .portfolio-hero {
+    height: auto;
+    min-height: 50vh;
+    background: none !important;
+  }
+
+  .portfolio-home .portfolio-section::before {
+    display: none;
+  }
+
+  .portfolio-project-overlay {
+    position: static;
+    opacity: 1;
+    background: none;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .portfolio-home {
+    --portfolio-border-color: rgba(255, 255, 255, 0.3);
+    --portfolio-text-secondary: rgba(255, 255, 255, 0.9);
+  }
+
+  .portfolio-skill-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* 减少动画偏好支持 */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hero-heading span,
+  .portfolio-hero-subheading,
+  .portfolio-hero-cta,
+  .portfolio-scroll-indicator {
+    animation: none;
+    opacity: 1;
+  }
+
+  .portfolio-hero-text {
+    transition: none;
+  }
+
+  .portfolio-project-image img {
+    transition: none;
+  }
+
+  .portfolio-skill-tag:hover {
+    transform: none;
+  }
+}
+
+/* 横屏模式优化 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .portfolio-hero {
+    height: 100vh;
+  }
+
+  .portfolio-hero-content {
+    padding-top: 5vh;
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
+  }
+
+  .portfolio-hero-heading {
+    font-size: clamp(2rem, 6vh, 4rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-hero-subheading {
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-scroll-indicator {
+    bottom: 1rem;
   }
 }

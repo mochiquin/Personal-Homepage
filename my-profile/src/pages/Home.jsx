@@ -62,6 +62,10 @@ const PortfolioHome = () => {
         </div>
       </section>
 
+      {/* Spacer Div - Prevents content overlap */}
+      <div className="portfolio-spacer"></div>
+
+
       {/* Intro Section */}
       <section className="portfolio-intro portfolio-section">
         <div className="portfolio-container">
