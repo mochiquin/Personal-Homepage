@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import '../styles/Projects.css';
 import profileImage from '../assets/profilepage.png';
-
+import atomic_heart from '../assets/2.jpg';
+import koala from '../assets/v1.png';
 const Projects = () => {
   // Project data
   const projects = [
@@ -12,7 +13,7 @@ const Projects = () => {
       technologies: ["React", "JavaScript", "CSS", "HTML"],
       codeUrl: "https://github.com/mochiquin/mainpageofself",
       demoUrl: "https://yourwebsite.com",
-      image: "profilePageImage"
+      image: profileImage
     },
     {
       id: 2,
@@ -21,7 +22,7 @@ const Projects = () => {
       technologies: ["Photoshop", "Illustrator", "Digital Art"],
       codeUrl: "https://www.artstation.com/artwork/QXeAb4",
       demoUrl: "https://www.artstation.com/artwork/QXeAb4",
-      image: "/images/atomic-heart-illustrations.jpg"
+      image: atomic_heart
     },
     {
       id: 3,
@@ -30,7 +31,7 @@ const Projects = () => {
       technologies: ["Yolo11", "React", "a", "Express"],
       codeUrl: "https://github.com/yourusername/ecommerce-dashboard",
       demoUrl: "https://dashboard-demo.yourwebsite.com",
-      image: "/images/dashboard-project.jpg"
+      image: koala
     },
     {
       id: 4,
@@ -41,15 +42,6 @@ const Projects = () => {
       demoUrl: "https://weatherapp.yourwebsite.com",
       image: "/images/weather-app.jpg"
     },
-    {
-      id: 5,
-      title: "Mobile Weather App",
-      description: "A sleek weather application for iOS and Android that provides real-time forecasts, radar maps, and weather alerts with a beautiful UI.",
-      technologies: ["React Native", "JavaScript", "API Integration"],
-      codeUrl: "https://github.com/yourusername/weather-app",
-      demoUrl: "https://weatherapp.yourwebsite.com",
-      image: "/images/weather-app.jpg"
-    }
   ];
 
   // Categories for filtering
