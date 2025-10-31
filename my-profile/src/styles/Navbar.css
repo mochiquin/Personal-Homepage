@@ -19,7 +19,7 @@
   
   .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 90%;
     max-width: 1400px;
@@ -30,12 +30,12 @@
     font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 1px;
-    color:  wheat;
+    color: var(--text-color);
     z-index: 10;
   }
   
   .navbar-logo span {
-    color:  wheat;
+    color: var(--text-color);
   }
   
   .navbar-links {
@@ -48,7 +48,7 @@
   }
   
   .navbar-links li a {
-    color: wheat;
+    color: var(--text-color);
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
@@ -58,11 +58,11 @@
   }
   
   .navbar-links li a:hover {
-    color: wheat;
+    color: var(--text-secondary);
   }
   
   .navbar-links li a.active {
-    color:  wheat;
+    color: var(--text-color);
   }
   
   .navbar-links li a::after {
@@ -72,7 +72,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: wheat;
+    background-color: var(--accent-color);
     transition: width 0.3s ease;
   }
   
@@ -85,6 +85,8 @@
     display: none;
     cursor: pointer;
     z-index: 10;
+    position: absolute;
+    right: 5%;
   }
   
   .hamburger {

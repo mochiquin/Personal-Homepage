@@ -1,120 +1,32 @@
-/* 将这些样式添加到 Home.css 或创建单独的样式文件 */
-
+/* CelestialGoldenCircle.css */
 .celestial-golden-circle {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    top: 50%;
-    right: 5%;
-    transform: translateY(-50%);
-    z-index: 1;
-    opacity: 0.85; /* 微妙的透明度使其更融入背景 */
-    transition: transform 0.8s ease-out, opacity 0.5s ease;
-  }
-  
-  /* 初始状态隐藏，然后淡入显示 */
+  position: absolute;
+  width: clamp(300px, 35vw, 500px);
+  height: clamp(300px, 35vw, 500px);
+  top: 50%;
+  right: clamp(5%, 10vw, 10%);
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  transition: transform 0.5s ease-out;
+}
+
+.celestial-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(230, 196, 96, 0.3));
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
   .celestial-golden-circle {
-    animation: fadeIn 2.5s ease forwards;
-    opacity: 0;
+    display: none;
   }
-  
-  .celestial-svg {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
-    transition: transform 0.8s ease-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .celestial-golden-circle {
+    width: clamp(200px, 30vw, 400px);
+    height: clamp(200px, 30vw, 400px);
   }
-  
-  /* 鼠标悬停效果 */
-  .hero:hover .celestial-golden-circle {
-    opacity: 0.95;
-  }
-  
-  /* 添加烫金斑点效果 */
-  .celestial-golden-circle::before,
-  .celestial-golden-circle::after {
-    content: '';
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: #ffd700;
-    filter: blur(1px);
-    box-shadow: 0 0 5px #d4af37;
-    opacity: 0;
-    animation: goldSparkle 4s infinite alternate;
-  }
-  
-  .celestial-golden-circle::before {
-    top: 30%;
-    left: 20%;
-    animation-delay: 0.5s;
-  }
-  
-  .celestial-golden-circle::after {
-    bottom: 25%;
-    right: 15%;
-    animation-delay: 1.5s;
-  }
-  
-  /* 微光闪烁动画 */
-  @keyframes goldSparkle {
-    0%, 100% {
-      opacity: 0.2;
-      transform: scale(0.8);
-    }
-    50% {
-      opacity: 0.9;
-      transform: scale(1.5);
-    }
-  }
-  
-  /* 淡入动画 */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-50%) scale(0.95);
-    }
-    to {
-      opacity: 0.85;
-      transform: translateY(-50%) scale(1);
-    }
-  }
-  
-  /* 响应式样式 */
-  @media screen and (max-width: 1200px) {
-    .celestial-golden-circle {
-      width: 350px;
-      height: 350px;
-      right: 2%;
-    }
-  }
-  
-  @media screen and (max-width: 900px) {
-    .celestial-golden-circle {
-      display: none;
-    }
-  }
-  
-  /* 添加一些随机散布的星点 */
-  .star-point {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: #ffd700;
-    border-radius: 50%;
-    filter: blur(0.5px);
-    opacity: 0.7;
-    animation: twinkle 3s infinite alternate;
-  }
-  
-  @keyframes twinkle {
-    from {
-      opacity: 0.3;
-      filter: blur(1px);
-    }
-    to {
-      opacity: 0.9;
-      filter: blur(0.5px);
-    }
-  }
+}

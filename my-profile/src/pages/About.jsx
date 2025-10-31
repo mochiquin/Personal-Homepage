@@ -1,6 +1,7 @@
 // pages/About.jsx
 import { useEffect, useState } from 'react';
 import '../styles/About.css';
+import backgroundImage from '../assets/2.jpg';
 
 const About = () => {
   // Timeline data
@@ -60,14 +61,6 @@ const About = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
-  // Smooth scroll function
-  const scrollToElement = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="about-page">
@@ -98,7 +91,7 @@ const About = () => {
         </div>
         
         {/* Redesigned About Content with background image and vertical text */}
-        <div className="about-background">
+        <div className="about-background" style={{backgroundImage: `url(${backgroundImage})`}}>
           <div className="about-content-container">
             <div className="about-content">
               <div className="about-vertical-text">

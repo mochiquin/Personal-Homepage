@@ -1,5 +1,5 @@
 // pages/Home.jsx
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import portfolioHeroBg from '../assets/hero-bg.jpg'; // Import background image
@@ -55,7 +55,7 @@ const PortfolioHome = () => {
           </div>
         </div>
         <div className="portfolio-hero-overlay"></div>
-        <DynamicCircle />
+        {/* <DynamicCircle /> */}
         <div className="portfolio-scroll-indicator">
           <span>Scroll Down</span>
           <div className="portfolio-scroll-arrow"></div>

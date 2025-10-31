@@ -51,10 +51,6 @@ const Footer = () => {
 
         <div className="portfolio-footer-bottom">
           <p>&copy; {currentYear} Silin Li. All Rights Reserved</p>
-          <div className="portfolio-footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

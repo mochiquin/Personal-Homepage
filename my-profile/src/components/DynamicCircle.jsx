@@ -1,5 +1,6 @@
 // DynamicCircle.jsx
 import { useEffect, useRef } from 'react';
+import '../styles/DynamicCircle.css';
 
 const DynamicCircle = () => {
   const circleRef = useRef(null);
@@ -45,7 +46,6 @@ const DynamicCircle = () => {
       const circle = circleRef.current;
       if (!circle) return;
       
-      const circumference = 2 * Math.PI * 90;
       const count = 5; // 光点数量
       
       for (let i = 0; i < count; i++) {

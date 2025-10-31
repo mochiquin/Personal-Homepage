@@ -1,8 +1,5 @@
 /* About.css - Kojima Productions Inspired */
 
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 /* About page container */
 .about-page {
   width: 100%;
@@ -183,7 +180,7 @@
   transform: translateX(-50%);
   width: 70%; /* 控制中间背景区域的宽度 */
   height: 100%;
-  background-image: url('../assets/2.jpg'); /* You'll need to add this image */
+  background-image: inherit;
   background-size: cover;
   background-position: center;
   opacity: 0.15;

@@ -1,5 +1,6 @@
 // CelestialGoldenCircle.jsx
 import { useEffect, useRef } from 'react';
+import '../styles/CelestialGoldenCircle.css';
 
 const CelestialGoldenCircle = () => {
   const circleRef = useRef(null);

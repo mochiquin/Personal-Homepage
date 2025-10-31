@@ -36,10 +36,6 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isHome && !scrolled ? 'on-hero' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <span>Silin</span>Li
-        </Link>
-
         <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
             <li>
