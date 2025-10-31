@@ -29,7 +29,7 @@ const Contact = () => {
                   </div>
                   <div className="info-content">
                     <h3>Email</h3>
-                    <p>sili70583@gmail.com</p>
+                    <p>sili50783@gmail.com</p>
                   </div>
                 </div>
 
@@ -39,7 +39,7 @@ const Contact = () => {
                   </div>
                   <div className="info-content">
                     <h3>Location</h3>
-                    <p>China, Nanning</p>
+                    <p>Adelaide, Australia</p>
                   </div>
                 </div>
               </div>
@@ -47,17 +47,14 @@ const Contact = () => {
               <div className="social-links">
                 <h3>Social Media</h3>
                 <div className="social-icons">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://github.com/mochiquin" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                  <a href="https://www.linkedin.com/in/silin-li-9956462a9" target="_blank" rel="noopener noreferrer" className="social-icon">
                     <i className="fab fa-linkedin-in"></i>
                   </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-                    <i className="fab fa-instagram"></i>
+                  <a href="https://www.artstation.com/pelosolar" target="_blank" rel="noopener noreferrer" className="social-icon">
+                    <i className="fab fa-artstation"></i>
                   </a>
                 </div>
               </div>

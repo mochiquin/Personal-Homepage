@@ -26,21 +26,12 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Koloa be where",
-      description: "A web application for citizens to upload the images of koloa and use ai models to identify it, and provide information about the species.",
-      technologies: ["Yolo11", "React", "a", "Express"],
+      title: "Koala be where",
+      description: "A web application for citizens to upload the images of koala and use ai models to identify it, and provide information about the species.",
+      technologies: ["Yolo11", "React", "Node.js", "Express"],
       codeUrl: "https://github.com/yourusername/ecommerce-dashboard",
       demoUrl: "https://dashboard-demo.yourwebsite.com",
       image: koala
-    },
-    {
-      id: 4,
-      title: "Mobile Weather App",
-      description: "A sleek weather application for iOS and Android that provides real-time forecasts, radar maps, and weather alerts with a beautiful UI.",
-      technologies: ["React Native", "JavaScript", "API Integration"],
-      codeUrl: "https://github.com/yourusername/weather-app",
-      demoUrl: "https://weatherapp.yourwebsite.com",
-      image: "/images/weather-app.jpg"
     },
   ];
 

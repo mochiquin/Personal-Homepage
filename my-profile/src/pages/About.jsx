@@ -1,5 +1,5 @@
 // pages/About.jsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/About.css';
 
 const About = () => {
@@ -131,9 +131,9 @@ const About = () => {
                 </div>
                 
                 <div className="about-social">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
+                  <a href="https://github.com/mochiquin" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://www.linkedin.com/in/silin-li-9956462a9" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                  <a href="https://www.artstation.com/pelosolar" target="_blank" rel="noopener noreferrer">ArtStation</a>
                 </div>
                 
                 <div className="about-signature">

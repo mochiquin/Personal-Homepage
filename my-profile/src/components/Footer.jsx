@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="portfolio-footer-container">
         <div className="portfolio-footer-top">
           <div className="portfolio-footer-logo">
-            <span>YOUR</span>NAME
+            <span>Silin</span>Li
           </div>
 
           <div className="portfolio-footer-links">
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
 
         <div className="portfolio-footer-bottom">
-          <p>&copy; {currentYear} YOUR NAME. All Rights Reserved</p>
+          <p>&copy; {currentYear} Silin Li. All Rights Reserved</p>
           <div className="portfolio-footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
